@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/error-frame.html -->
+<html ng-app="spark.extension.content.errorFrame" class="ng-scope"><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/css/error-frame.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-controller="errorFrameController as errorController" style="display:none;" class="ng-scope">
+    <div class="page-container">
+        <div class="dialog-box" ng-class="{dialogError: errorController.showError, dialogWaiting: errorController.showWaiting}">
+            <div class="close-button-container">
+                <button ng-click="errorController.dismiss(true)">
+                    <img ng-src="assets/img/error/whiteX.png" src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/img/error/whiteX.png">
+                </button>
+            </div>
+            <div class="message-container">
+                <i18n key="errorFrame_errorMessage" ng-show="errorController.showError" class="ng-hide">Awww! Process failed!</i18n>
+                <i18n key="errorFrame_waitingMessage" ng-show="errorController.showWaiting" class="ng-hide">Preparing your screen recording, please wait.</i18n>
+            </div>
+            <div class="action-container">
+                <button ng-click="errorController.tryAgain()" ng-show="errorController.showError" class="ng-hide">
+                    <i18n key="errorFrame_tryAgain">Try again?</i18n>
+                </button>
+                <div class="app-loading-dots ng-hide" ng-show="errorController.showWaiting">
+                    <span>.</span><span>.</span><span>.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/vendor/angular/angular.js"></script>
+<script src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/vendor/angular-retina.js"></script>
+<script src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/js/common.js"></script>
+<script src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/js/extension.common.js"></script>
+<script src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/js/errorFrame.js"></script>
+
+</body></html>

@@ -1,0 +1,1230 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="词典,辞典,在线翻译,解释,意思,英语词典,日语词典,日语,英语,日语在线翻译" />
+    <meta name="Description" content="沪江小D日语在线翻译是免费日语在线翻译网站,提供勉強的翻译，勉強是什么意思,勉強的音标与发音,勉強的含义及用法，以及勉強的参考例句,勉強是什么意思,解析勉強的含义。" />
+    <title>勉強是什么意思_日语在线翻译_勉強的翻译、含义、读音、用法、参考例句_沪江小D日语词典</title>
+    <link rel='stylesheet' href='http://res.d.hjfile.cn/app/css/output/$nc_new_base_en_css$nc_base_new_css$ac_tipswindown_css$nc_style_new_css$nc_leftbar_css$nc_content_new_css$nc_jp_input_css$nc_jp_css$nc_noword_css_635616053470000000.css' type='text/css'/>
+    <link rel="shortcut icon" href="/jp/favicon.ico" type="image/x-icon" />
+    <link rel="search" type="application/opensearchdescription+xml" href="/hjdict_ie7_jp.xml" title="沪江小D-日语" />
+    <script src='http://res.d.hjfile.cn/app/js/output/$js_jquery-last_js$aj_jplayer_js$aj_tts_js$aj_flash_js$aj_hjfunctions_js$nj_header_js$nj_base_js_635780208779175977.js' type='text/javascript'></script>
+    <script src='http://res.d.hjfile.cn/app/js/output/$nj_fastlogin_js$nj_sugdroplist_js$nj_jp_input_js$nj_jp_inner_js$aj_site_search_js$aj__jp_content_format_js_635870688360368702.js' type='text/javascript'></script>
+    
+    <script type="text/javascript" src='http://pass.hujiang.com/static/js/biz/hjpassport-async.js'></script>
+    <script language="javascript" type="text/javascript"> 
+        var _pwords ="勉強";
+        var expen_click="-";
+        var _Submited=false;
+        var _pageloaded=false; 
+        //历史查询
+        var _wordhistory="勉強{j}";
+        var ReferPage = "--";
+        var hasResult= ("False"=="True")?1:0;
+        var _word_title ="勉強"; 
+        var _word_title_encode = "%e5%8b%89%e5%bc%b7"; 
+        var _matchcounts_int=0;
+        var _HjDict_MyDictUrl = "dict.hjenglish.com/app";
+        var _searchtype = "jc";
+        var answer = "";
+        var userEmail = ''; 
+        try{
+            document.domain="yeshj.com";
+        }
+        catch (e){
+        }
+
+        $(document).ready(function() {
+            $(".advice").html("帮小D改进本词");
+            $(".advice").toggle(
+                function(){
+                    var iframe = $(this).parent().nextAll("iframe");
+            
+                    iframe.animate({ height: "265px" }, { queue: true, duration: 1000 });
+                },
+                function(){
+                    var iframe = $(this).parent().nextAll("iframe");
+                    iframe.animate({ height: "0px" }, { queue: true, duration: 1000 });
+                }
+            );
+            //查例句
+            $("#tab_sent").click(function () {
+                if ($("#w").val().length > 0) {
+                    SubmitSent();
+                }
+            });
+            $("#txtTitle").html(answer);
+            //查单词
+            $("#tab_word").click(function () {
+                if ($("#w").val().length > 0) {
+                    Submit();
+                }
+            });
+            //订阅词条，友好显示
+            if(0 == 0){
+                $("#loginid").html("<strong>注：</strong>此功能请先 <a href='#' onclick='window.hjquicklogin.doLogin();return false;'>登录</a> 后使用");
+                $(".br_item").hide();
+                $("#btnSendbook").hide();
+                $("#txtTitle").hide();
+                $(".questionQ").hide();
+                $("#tip3").hide();
+            }else{
+                $("#loginid").html("");
+                $(".br_item").show();
+                $("#btnSendbook").show();
+                $("#txtTitle").show();
+                $(".questionQ").show();
+            }  
+            var itemCount = 2;
+            if ($(".jp_explain").size() == 1) {
+                var text = $(".jp_explain").eq(0).text();
+                text = text.replace(/ /g, "");
+                if (text.length < 200) {
+                    itemCount = 4;
+                }
+            }
+            //用户订阅回车的事件
+            $("#txtEmail").keydown(function(event) {
+                if (event.keyCode == 13) {
+                    subscribeWord();
+                }
+            });			
+            //顶部搜索类型选项
+            $("#search_select a").unbind();
+            $("#tab_word").click(function() {
+                if ($("#tab_sent").attr("class") == "current") {
+                    $("#tab_sent").attr("class", "");
+                    $("#tab_word").attr("class", "current");                    
+                    // 调整逻辑为点击时,直接转到查单词
+                    var word = HJ$("w").value;
+                    word = word.replace(" ", "");
+                    if (word != "") {
+                        Submit();
+                        return;					
+                    }                  
+                    $("#btn_jpsent").hide();
+                    $("#btn_jc").show();
+                    $("#btn_cj").show();
+                    $("#w").focus();
+                }
+            });
+            $("#tab_sent").click(function() {
+                if ($("#tab_word").attr("class") == "current") {
+                    $("#tab_word").attr("class", "");
+                    $("#tab_sent").attr("class", "current");
+                    
+                    // 调整逻辑为点击时,直接转到查句子
+                    var word = HJ$("w").value;
+                    word = word.replace(" ", "");
+                    if (word != "") {
+                        SubmitSent();
+                        return;					
+                    }
+                    
+                    
+                    $("#w").unbind("keydown");
+                    $("#w").keydown(function(event) {
+                        if (!event) {
+                            event = window.event;
+                        }
+
+                        if (event.keyCode == 13) {
+                            SubmitSent();
+                        }
+                    });
+                    
+                    $("#btn_jc").hide();
+                    $("#btn_cj").hide();
+                    $("#btn_jpsent").show();
+                    $("#w").focus();
+                }
+            }); 
+            
+            
+            $("#w").keydown(function(event) {
+                if(!event){ 
+                    event= window.event;
+                }
+                if(event.keyCode==13){
+                    if (event.ctrlKey) {
+                        Submit("cj");
+                    } else {
+                        Submit("jc");
+                    }
+                    return false;
+                }
+            });	                    
+            
+            // 新建词条链接样式
+            $("#btn_sugword").removeAttr("onclick");
+            $("#btn_sugword").click(function() {
+                // 切换向上,向下的箭头按钮
+                if ($(this).attr("class") == "shrink_blue") {
+                    $(this).attr("class", "shrink_blue_open");
+                } else {
+                    $(this).attr("class", "shrink_blue");
+                }
+                $(this).next().toggle();
+                sugword("/app/jp_recommend.aspx?w="+_word_title_encode+"&wtype="+_searchtype,"ifr_sugword");
+                return false;
+            });	        
+	                        
+        });         
+        function tipMsg(){
+            $("#msgTip").html("&nbsp;&nbsp;&nbsp;<a href='###' onclick='window.hjquicklogin.doLogin();return false;'>[登录]</a>或<a href='http://passport.yeshj.com/reg/?source=newd' onclick='addrec(0);'>[注册]</a>后就可以看了哦~~");
+        }       
+        function addrec(obj){            
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "jp_content_new.aspx",
+                data:{
+                    subtype: "addrmdrec",
+                    objtype:obj
+                }});
+        }        
+        function hello() {
+            $("#sayhello").html(
+				GetFlashCode("mp3_flash","/common/speaker_mini.swf","son="+ "/app/images/welcome_jp.mp3" +"&autoplay=true", 1, 1, true)
+			);
+        }       
+        //禁止form回车自动提交
+        function noSubmit(event) {
+            if (event.keyCode == 13) {
+                var obj = event.srcElement ? event.srcElement : event.target;
+                if (obj.tagName == "INPUT") {
+                    return false;
+                }
+            } 
+        }       
+        function sugword(strlink,objiframe) {
+            if ($("#"+objiframe).css("display") != "none") {
+                $("#"+objiframe).hide();
+                return;
+            }
+            $("#"+objiframe).attr("src", strlink);
+            $("#"+objiframe).show();
+        }	    
+        function tranJp2En(jpWord) {
+            google.language.translate(jpWord, "ja", "en",
+            function(result) {
+                if (result.translation) {
+                    var enWord = result.translation;
+                    enWord = enWord.replace("[", "");
+                    enWord = enWord.replace("]", "");
+                    enWord = enWord.replace("-", "");
+                    enWord = enWord.replace(";", "");
+
+                    if(enWord != "" && enWord !=null){
+                        $("a[word='" + jpWord + "']").html(enWord);
+                        $("a[word='" + jpWord + "']").attr("href", "/app/w/" + enWord);
+                        $("a[word='" + jpWord + "']").prev().show();
+                    }
+                }
+            });
+        }
+	    
+        //提交单词内容到小Q
+        function subscribeWord() {
+            if(0 != 0){
+                var bookEmail = userEmail;
+                if (bookEmail == "" || bookEmail == null){
+                    alert("邮箱不能为空");
+                } else {
+                    var qaTitle = $("#txtTitle").val();
+                    var name = document.getElementById("money")   
+                    var index = name.selectedIndex;   
+                    var hy = name.options[index].value;  
+                    
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: "jp_content_new.aspx",
+                        data:{
+                            subtype:"subscribeword",
+                            title:qaTitle,
+                            hy:hy,
+                            bookWord:_word_title_encode,
+                            email:bookEmail,
+                            langs:_searchtype
+                        },
+                        success: function (data) {
+                            var bookResult = parseInt(data);
+                            if(bookResult > 7) {
+                                $("#sendQuestion").show();
+                                $("#resultMsg").html("提交成功！点击 <a target='_blank' style='margin-left:0px' href='http://bulo.yeshj.com/question/"+bookResult+"/'> 此处 </a> 查看刚刚所提交的问题。");
+                            }
+                                        
+                            switch(bookResult){
+                                case 1:
+                                    $("#resultMsg").html("请输入正确的邮箱。");
+                                    break;
+                                case 2:
+                                    $("#resultMsg").html("暂时不支持句子提交。");
+                                    break;
+                                case 3:
+                                    $("#resultMsg").html("请输入全角假名。");
+                                    break;
+                                case 4:
+                                    $("#resultMsg").html("一天最多只能提交5个单词哦~~ ^_^");
+                                    break;
+                                case 5:
+                                    $("#resultMsg").html("服务器忙，请稍后再试~~");
+                                    break;
+                                case 6:
+                                    $("#resultMsg").html("你已经提交过一次该单词了哦。");
+                                    break;
+                                case 7:
+                                    $("#resultMsg").html("你的沪元已经不够了哦。");
+                                    break;
+                            }
+                        },
+                        error: function(XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                    });
+                }
+            }else{
+                //window.location.href="http://bulo.yeshj.com/app/login?source=newd&returnurl=http://dev.dict.hjenglish.com/app/jp/"+_searchtype+"/"+ _word_title_encode;
+                window.hjquicklogin.doLogin();return false;
+            }
+        }
+
+        $(function(){
+            $(".list_searchType a").click(function(){
+                if($("#tab_word").hasClass("on")){
+                    $(".srf_link_showTip").css("right","3px");
+                }else{
+                    $(".srf_link_showTip").css("right","-13px");
+                }
+            })
+        
+            //词频
+            $(".cpTips_box").each(function(){
+                var cptips = this;
+                var str,level = $(this).parent().find(".on").length;
+                switch (level){
+                    case 5:str="沪江小DN5精品词汇，要记牢哦！";
+                        break;
+                    case 4:str="沪江小DN4精品词汇，要记牢哦！";
+                        break;
+                    case 3:str="沪江小DN3精品词汇，要记牢哦！";
+                        break;
+                    case 2:str="沪江小DN2精品词汇，推荐记忆！";
+                        break;
+                    case 1:str="沪江小DN1精品词汇，推荐记忆！";
+                        break;
+                }
+
+                $(this).find(".cpTips_con").html(str);
+                $(this).parent().find(".cp_star_box").lazyhover(function(){
+                    $(cptips).show();
+                },function(){
+                    $(cptips).hide()
+                },100, 100);
+
+            });
+        
+        
+        });
+
+    </script>
+    <style type="text/css">
+        .itemNormal, .itemOver {
+            width: 444px;
+        }
+
+        .itemNormal {
+            background-color: #fff;
+        }
+        /* 语言软键盘样式修正*/
+        .srf_tbl_lang {
+            border-collapse: separate;
+            border-spacing: 2px;
+            width: 100%;
+        }
+
+        .srf_link_showTip {
+            right: 3px;
+            top: 19px;
+            z-index: 3; /*软键盘开关按钮提到上面*/
+        }
+
+        .srf_pnl_buttons {
+            left: 227px;
+        }
+
+        .search_input {
+            width: 576px;
+        }
+
+        #suglist_panel {
+            margin-top: -8px !important;
+            width: 454px;
+        }
+
+        #btn_searchsent {
+            width: 111px;
+            background: url(/newDict/images/default_bg_all.gif) 0px -1410px no-repeat;
+            height: 40px;
+        }
+
+        a#btn_searchsent:hover {
+            width: 111px;
+            background: url(/newDict/images/default_bg_all.gif) 0px -1462px no-repeat;
+            height: 40px;
+        }
+
+        #cpTips_box {
+            z-index: 2;
+            width: 200px;
+        }
+
+            #cpTips_box .cpTips_con {
+                font-weight: normal;
+                font-size: 12px;
+                font-family: arial,sans-serif;
+            }
+
+        .trs_jp {
+            margin-left: 0;
+        }
+
+        .top_banner1, .top_banner2 {
+            position: relative;
+            top: 38px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body onload="onInit();" onmousedown="MouseDownOnBody(event);">
+    
+    
+<script src="/newDict/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="http://common.hjfile.cn/site/js/bottomActive1212.js"></script>  <link rel="stylesheet" type="text/css" href="http://common.hjfile.cn/site/css/questionnaire.css?ticket=20151117">    <script type="text/javascript" src="http://common.hjfile.cn/site/js/questionnaire.js?ticket=20151117"></script>    <script type="text/javascript">  $(function () {      bottomActive1212.init("dict");      window.fixQuestionnaire.init("dict");  });  </script>  
+
+<span id="new_top_default_inc_new_header3_pnl_newHead" class="club_Header_pnl_newHead">
+    <link rel='stylesheet' href='http://res.d.hjfile.cn/app/css/output/$nc_new_head_css_635834599308178076.css' type='text/css'/>
+    <script src="/newDict/js/jquery.json-2.2.min.js" type="text/javascript"></script>
+    
+    <script type="text/javascript" src='http://pass.hujiang.com/static/js/biz/hjpassport-async.js'></script>
+    <script src='http://res.d.hjfile.cn/app/js/output/$nj_new_head_js$nj_messagetip_js$nj_fastlogin_js_635773927166062907.js' type='text/javascript'></script>
+    <div id="cls_pnlHeader_wrap" class="cls_pnlHeader_wrap">
+        <div id="cls_pnlHeader">
+            <div id="cls_header_AppSlide" class="">
+                <div class="cls_header_AppSlide_Title">
+                    <a href="/jp/" title="沪江网校" id="cls_headLogo" class="cls_headLogo">
+                        <div class="link_header_AppSlide"></div>
+                    </a>
+                </div>
+                <ul>
+                    <li><a class="cls_header_app_class" target="_blank" href="http://www.hjclass.com/"><i></i><span>沪江网校</span></a></li>
+                    
+                    <li><a class="cls_header_app_hj" target="_blank" href="http://www.hujiang.com/xuexi/"><i></i><span>沪江网</span></a></li>
+                    <li><a class="cls_header_app_cc" target="_blank" href="http://www.cctalk.com/"><i></i><span>CC课堂</span></a></li>
+                    <li class="cls_line"><a class="cls_header_app_en" target="_blank" href="http://www.hjenglish.com/"><i></i><span>英语</span></a></li>
+                    <li><a class="cls_header_app_jp" target="_blank" href="http://jp.hjenglish.com/"><i></i><span>日语</span></a></li>
+                    <li><a class="cls_header_app_fr" target="_blank" rel="nofollow" href="http://fr.hujiang.com/"><i></i><span>法语</span></a></li>
+                    <li><a class="cls_header_app_kr" target="_blank" rel="nofollow" href="http://kr.hujiang.com/"><i></i><span>韩语</span></a></li>
+                    <li class="cls_line"><a class="cls_header_app_tuan" target="_blank" rel="nofollow" href="http://st.hujiang.com/"><i></i><span>沪江社团</span></a></li>
+                </ul>
+            </div>
+            <div class="cls_listUserInfo_box">
+                <ul class="cls_listUserInfo floatleft">
+                    
+                    <li class="head_menu">
+                        <a href="###" onclick="window.hjquicklogin.doLogin();return false;" class="link_shadow">登录</a>
+                    </li>
+                    <li class="head_menu">
+                        <a href='###' onclick='window.hjquicklogin.doRegister();return false;' rel="nofollow" class="link_shadow">注册</a>
+                    </li>
+                    
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <ul class="cls_listApp">
+                <li id="cls_headMenu_language">
+                    <div class="layer_slideTitle">
+                        <a class="slide slidelink_shadow" href="/jp/">日语</a>
+                        <b></b>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="layer_slideList">
+                        <div class="layer_cnt" id="shiftlangpanel">
+                            <ul>
+                                <li><a href="/">英语</a></li>
+                                <li><a href="/jp/">日语</a></li>
+                                <li><a href="/fr/">法语</a></li>
+                                <li><a href="/kr/">韩语</a></li>
+                                <li><a href="/de/">德语</a></li>
+                                <li><a href="/es/">西语</a></li>
+                                <div class="clear">
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="head_menu" id="cls_headMenu_menu"><a class="link_shadow" href="###" onclick="this.href='/scb/'">生词本</a></li>
+                <li id="cls_headMenu_tool">
+                    <div class="layer_slideTitle">
+                        <a class="slide slidelink_shadow" href="/app/more">工具箱</a>
+                        <b></b>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="layer_slideList layer_friendsList">
+                        <div class="layer_cnt" style="margin-bottom: 0;">
+                            <ul>
+                                <li><a href="/app/trans/">全文翻译</a></li>
+                                <li><a href="/app/reader/">语音朗读</a></li>
+                                <li><a href="###" onclick="showAddWord()">贡献词条</a></li>
+                                <li><a href="/product/">产品大全</a></li>
+                                <li><a href="/mobile/">手机小D</a></li>
+                                <div class="clear">
+                                </div>
+                            </ul>
+                            <div class="clear"></div>
+                            <div id="tipset" style="display: none;">
+                                <a id="hjdict_slide" class="on" href="javascript:void(0);" title="小D划词翻译开/关" onclick="ShiftDictEnable();return false;">划词</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="head_menu shetuan" id="cls_headMenu_st"><a class="link_shadow" href="http://st.hujiang.com/" target="_blank">沪江社团</a></li>
+
+                <li class="head_menu head_menu_noback" id="cls_headMenu_group"><a class="link_shadow" href="###">
+
+                    
+<script type="text/javascript">
+    $(function () {
+        $("#voiceBtn").click(function () {
+            $(this).attr("style", "background: url(/images/btn_voice_over.gif) no-repeat;");
+        });
+        $("#voiceBtn").mouseout(function () {
+            $(this).attr("style", "");
+        });
+    });
+</script>
+                </a></li>
+
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var HJ_Dict_BuloID = 0; 
+        function hjd_onShiftDictEnable(status) {
+            if(status){
+                $("#hjdict_slide").addClass("on").text("划词").attr("title", "划词已开启");
+            }else{
+                $("#hjdict_slide").removeClass("on").text("划词").attr("title", "划词已关闭");
+            }
+        }
+
+        $(function(){
+            var path = window.location.pathname;
+	    
+            //如果不是 四个语种的首页，则加载划词
+            if (path != "/" && path != "/fr/" && path!="/kr/" && path!="/jp/") {
+                $("#hjdict_slide").parent().show();
+                DelayScript("/app/js/dict_ajax.js?t=20150805",3000);//小D开关延迟两秒加载
+            }
+        });
+    </script>
+    
+    <script type="text/javascript" src="http://pass.hujiang.com/ulogin/Scripts/unionlogin.js"></script>
+    <script type="text/javascript">
+        var passport = new hjpassport();
+        passport.source = 'quick_login_dict';
+        passport.baseUrl = 'http://pass.hujiang.com/ulogin/quick';
+        passport.agent = 'http://dict.hjenglish.com/oauth/agent.html';
+        passport.validationSuccess = 'loginok()';
+        function loginok() {
+            window.location.reload();
+        };
+    </script>
+    </span>
+  <script type="text/javascript" src="http://common.hjfile.cn/site/js/passAddAd.js"></script>  <script type="text/javascript">  $(function () {   window.passAddAd.init("dict");  });  </script>  
+    
+        <div id="wrapper" style="margin-top: 0px;">
+            <!--  顶部查询输入栏目 -->
+            <div id="xd_search">
+                <div class="xd_search_con">
+                    <div id="logo">
+                        <a href="/jp/" title="沪江小D">
+                            <img src="/app/images/logo_hjdict.gif" autocomplete="off" alt="沪江小D" /></a>
+                    </div>
+                    <div id="search_box">
+                        <!--搜索-->
+                        
+
+<div class="list_searchType">
+<a id="tab_word"  href="###" class='on' >查单词</a>
+	<span class="split" class="gray"></span>
+	<a id="tab_sent" href="###"  >查例句</a>
+</div>
+<div class="search_input">
+<div class="search_arrow"></div>
+<div class="search_init_wrap" id ="idforjp">
+     
+	<a href="###" title="打开/关闭提示功能" class="btn_searchSelect"></a>
+	<input id="w" name="w" maxlength="1024" outline="none" type="text" autocomplete="off" value="勉強" class="search_init" title="输入要查询的内容" />
+</div>
+<span id="jp_search_word" >
+     <a id="btn_jc" onclick="Submit('jc');return false;" >日 中</a>
+	<a id="btn_cj"  onclick="Submit('cj');return false;" >中 日</a>
+    <div class="clear"></div>
+</span>
+<span id="search_sent" class='hide'>
+<a href="###" id="btn_searchsent" onclick="SubmitSent()" />查 句</a>
+</span>
+<div class="clear"></div>
+<span style="position:relative">
+	<div class="por">
+		<div id="suglist_form"></div>
+	</div>
+</span>
+</div>
+<div class="clear"></div>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div id="webbox-content" style="margin-top: 150px;">
+                <!-- 左侧内容 -->
+                
+
+<script type="text/javascript">
+
+    $(function () {
+
+        function getCookie(c_name) {
+            if (document.cookie.length > 0) {
+                c_start = document.cookie.indexOf(c_name + "=")
+                if (c_start != -1) {
+                    c_start = c_start + c_name.length + 1;
+                    c_end = document.cookie.indexOf(";", c_start);
+                    if (c_end == -1) c_end = document.cookie.length;
+                    return unescape(document.cookie.substring(c_start, c_end));
+                }
+            }
+            return ""
+        }
+
+        function setCookie(c_name, value, expiredays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + expiredays);
+            document.cookie = c_name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
+        }
+
+        function delCookie(name)//删除cookie
+        {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+
+
+        $(".link_more").click(function () {
+            delCookie("unflod");
+            if($(this).hasClass("up")){
+                $(this).html("展开更多").removeClass("up");
+                $(".sub_siderBar").addClass("hide");
+                setCookie("unflod", 0, 30);
+            }else{
+                $(this).html("收起").addClass("up");
+                $(".sub_siderBar").removeClass("hide");
+                setCookie("unflod", 1, 30);
+            }
+        });
+
+        var unflod = getCookie("unflod");
+        if (unflod == "1")
+        {
+            $(".link_more").html("收起").addClass("up");
+            $(".sub_siderBar").removeClass("hide");
+        }
+
+        resize();
+        $(window).resize(function(){
+            resize();
+        });
+    })
+
+    function resize(){
+        if($(window).height()<750){
+            $("#app_yeshj,#daysent").hide();
+        }else{
+            $("#app_yeshj,#daysent").show();
+        }
+    }
+
+
+    function reciteClick() {
+
+         var userid = "0";
+        if (userid < 1) {
+            window.location.href = "http://pass.hujiang.com/?url=" + document.location.href;
+            return;
+        }
+        else {
+            showReciteForm('/app/mydict/recite_wordform.aspx');
+        }
+        
+    }
+    
+    function showShadowDiv() {
+		var $sha = $("#shadowDiv");
+		$sha.height(document.body.scrollHeight);
+		$sha.width(document.body.scrollWidth);
+		$sha.show();
+    }
+    
+    function hideShadowDiv() {
+		$("#shadowDiv").hide();
+    }
+    
+    // 显示练习窗体
+    function showReciteForm(url) {
+		showReciteFormInternal(url);
+    }
+
+    function showReciteFormInternal(url) {
+        $("#ifr2").attr("src", url);
+        setTimeout(function() { tipsWindown("背单词", 'id:popDiv2', "918", "632", "true", "", "true", "text"); }, 10);    
+    }
+    
+    function listItem_mouseover(sender) {
+		sender.style.backgroundColor='#DFF4FF';
+    }
+    
+    function listItem_mouseout(sender) {
+		sender.style.backgroundColor='';
+    }
+
+</script>
+
+<!-- left_menu -->
+<div class="siderBar">
+    <a href="javascript:void(0);"  onclick="HjDict.User.SetOldPage();location.reload();" class="goto goto_old"></a>
+    <ul class="clearfix">
+        <li id="app_dict" ><a href="/en/w/"><i></i><span>英语词典</span></a></li>
+        <li id="app_jp" class='current'>
+            <a href="/jp/w/"><i></i><span>日语词典</span></a> 
+        </li>
+        <li id="app_fr" >
+            <a href="/fr/w/"><i></i><span>法语词典</span></a> 
+        </li>
+        <li id="app_kr" >
+            <a href="/kr/w/"><i></i><span>韩语词典</span></a> 
+        </li>
+        <li id="app_de" >
+            <a href="/de/w/"><i></i><span>德语词典</span></a> 
+        </li>
+        <li id="app_es" >
+            <a href="/es/w/"><i></i><span>西语词典</span></a> 
+        </li>
+        
+        <li id="app_ename" >
+            <a href="/app/ename/"><i></i><span>人名词典</span></a> 
+        </li>
+        <li id="app_reader" >
+            <a href="/app/reader" rel="nofollow"><i></i><span>语音朗读</span></a>
+        </li>           
+        <li id="app_trans" >
+            <a href="/app/trans" rel="nofollow"><i></i><span>全文翻译</span></a>
+        </li>
+        <li id="app_wordpad" >
+            <a href="/scb/" rel="nofollow"><i></i><span>生词本</span></a>
+        </li>
+        <li id="app_mysent" >
+            <a href="/app/mysent" rel="nofollow"><i></i><span>例句本</span></a>
+        </li>    
+        <li id="app_wordciku" >
+            <a href="/app/ciku" rel="nofollow"><i></i><span>词&nbsp;&nbsp;&nbsp;库</span></a>
+        </li>
+        
+    </ul>
+    <ul class="sub_siderBar hide">
+        <li id="app_history" >
+            <a href="/app/history" rel="nofollow"><i></i><span>查询历史</span></a> 
+        </li>
+		<li id="app_box" >
+			<a href="/app/more" rel="nofollow"><i></i><span>百宝箱</span></a>
+		</li>
+        <li id="app_cichang" onmouseover="listItem_mouseover(this)" onmouseout="listItem_mouseout(this)">
+            <a href="http://cichang.hujiang.com/" target="_blank" rel="nofollow"><i></i><span>开心词场</span></a>
+        </li>
+        <li id="app_dictation" onmouseover="listItem_mouseover(this)" onmouseout="listItem_mouseout(this)">
+            <a href="http://ting.hujiang.com/ " target="_blank" rel="nofollow"><i></i><span>听写酷</span></a>
+        </li>
+        <li id="app_day" onmouseover="listItem_mouseover(this)" onmouseout="listItem_mouseout(this)">
+            <a href="http://st.hujiang.com/magazine/" target="_blank" rel="nofollow"><i></i><span>学习社刊</span></a>
+        </li>
+        <li id="app_association" onmouseover="listItem_mouseover(this)" onmouseout="listItem_mouseout(this)">
+            <a href="http://st.hujiang.com/" target="_blank" rel="nofollow"><i></i><span>学习社团</span></a>
+        </li>
+        <li id="app_yeshj" onmouseover="listItem_mouseover(this)" onmouseout="listItem_mouseout(this)">
+            <a href="http://jp.hjenglish.com" target="_blank" rel="nofollow"><i></i><span>沪江资讯</span></a>
+        </li>
+    </ul>
+    <a href="javascript:;" class="link_more noline">展开更多</a>
+    <div id="menu_app">
+    	<a href="http://st.hujiang.com/cihui/c2505/" target="_blank" class="gray noline" rel="nofollow">问题反馈</a> <br>
+    	<a href="http://st.hujiang.com/136413213/" target="_blank" class="gray noline" rel="nofollow">小D小组</a>
+    	
+    </div>
+</div>
+<script>
+    $(function(){
+        
+        if(!(window.ActiveXObject && !window.XMLHttpRequest)){
+            window.onresize = function(){
+                $(".siderBar").css({left:$("#wrapper").offset().left,marginLeft:0});
+            };
+        }
+        
+    });
+</script>
+                <!-- 中间内容 -->
+                <div id="main">
+                    <div class="main_top"></div>
+                    <!--浮动工具框-->
+                    
+<!--浮动工具框-->
+<ul id="panel_reference">
+    <li>
+        <a id="btn_ref_1" class="btn_ref" href="javascript:;">查询历史</a>
+        <div id="ref_1" class="ref_cnt">
+            <span id="panel_history" ></span>
+            <div class="clear"></div>
+            <div class="txt_c" id="panel_clearhistory">
+                <a href="javascript:if(confirm('确定要清空查询历史？')){getwHistoryObj().AppendHistory('--!--')};" class="gray noline">
+                    [清空历史]</a> <a href="/app/history" target="_blank"  class="gray noline">[更多]</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <a id="btn_ref_2" class="btn_ref" href="javascript:;">相关参考</a>
+        <div id="ref_2" class="ref_cnt">
+            <ul>
+                
+                <script type='text/javascript'>
+(function () {
+function w(s){return document.write(s)}; 
+w('<li><a href="http://bulo.yeshj.com/search/q?all=" target="_blank">问沪江小Q</a></li>');
+w('<li><a href="http://dic.yahoo.co.jp/dsearch?p=&enc=UTF-8&stype=1&dtype=2" target="_blank">Yahoo!辞書</a></li>');
+w('<li><a href="http://www.excite.co.jp/dictionary/japanese_chinese/?search=" target="_blank">Excite辞書</a></li>');
+w('<li><a href="http://www.weblio.jp/content/" target="_blank">Weblio辞書</a></li>');
+w('<li><a href="http://www.google.co.jp/search?hl=ja&q=&btnG=Google+%E6%A4%9C%E7%B4%A2&lr=" target="_blank">查Google</a></li>');
+})();
+</script>
+
+            </ul>
+        </div>
+    </li>
+</ul>
+                    <!--浮动工具框:End-->
+                    <!--主体内容-->
+                    <div class="mian_container main_container">
+                        <!--欢迎页面-->
+                        
+                        <!--《《《结果页》》》》-->
+                        
+<style type="text/css">
+    .headword_div_jp {
+        margin-top: 10px;
+    }
+
+        .headword_div_jp span {
+            font-size: 14px;
+            line-height: 28px;
+            color: #707070;
+        }
+
+    #showall_jp {
+        padding: 3px;
+        cursor: pointer;
+        color: #030303;
+    }
+
+    #headword_jp {
+        color: #518616;
+    }
+
+    .headword_div_jp a {
+        padding: 5px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #showall_jp:hover {
+        background-color: #92968e;
+    }
+
+    .word_cliked {
+        color: #ff6a00;
+    }
+    .showall_cliked {
+        background-color: #92968e;
+    }
+    .showall_default {
+        background-color: #C9C9C9;
+    }
+</style>
+<div class='headword_div_jp' id='headword_div' style='display:none;'><span id='ty_list' style='display: none;'>与 <span id='headword_jp'>勉強</span> 同音的词有：</span><span class='description_br' style='display: none;'><br /></span><span id='tx_list' style='display: none;'>与 <span id='headword_jp'>勉強</span> 同形的词有：<a class='headword_jp_1'>勉強(benkyou)</a></span><span id='showall_jp' class='showall_default'>查看全部</span></div><div id='headword_jp_1' class='jp_word_comment'><div class='jp_title_td'><h1 title='日语单词'><span id='jpword_1' class='jpword'>勉強</span><span class='jp_ico' style='vertical-align: 2px; line-height: 12px;'>日</span><div class='cp_box clear'><div class="cp_star_box fl"><i class="icon_star on"></i><i class="icon_star on"></i><i class="icon_star on"></i><i class="icon_star on"></i><i class="icon_star"></i></div><a href="http://cichang.hujiang.com/book/1510552044490638" target="_blank" class="link_recite fl" title="N4基础词汇"></a><div id="cpTips_box" class="hide cpTips_box"><span class="cpTips_con txt_c">高频词，一定要记得哦！</span><i class="icon_arrow"></i><i class="icon_inner_arrow"></i></div></div><span class="jpAddWord" style="padding-left:5px;font-weight: normal; font-size:12px;" id="amw_panel_1"><a href="javascript:void(0);" onclick="addMydictWord(1,21,0,3513526,'jp','cn');return false;" style="width:16px;height:16px;" title="添加到我的生词本"><img width="16" height="16" align="absmiddle" src="/images/btn_myword_add.gif"></a></span></h1><input type='hidden' value='勉強' id='amw_word_1' /></div><div style='line-height: 24px; height: 24px; ' class='mt10'><span id='kana_1' class='trs_jp bold' title='假名'>【べんきょう】</span><span class='trs_jp  bold' title='罗马音'>【benkyou】</span><span class='tone_jp' title='音调'>◎</span><span title='日语发音  bold' class='jpSound'><script type='text/javascript' language='JavaScript'>GetTTSVoice("http://d1.g.hjfile.cn/voice/jpsound/C744.mp3");</script></span></div><div class='word_ext_con clearfix' id='tab1_top'><div class='flag big_type tip_content_item' style='margin-top:10px;' title='名・自他・サ变/三类'>【名・自他・サ变/三类】 </div><ul class='tip_content_item jp_definition_com'><li class='flag'><div>1. <span class='jp_explain soundmark_color' style='color:#333333;'>用功学习，用功读书；学习知识，积累经验。</span></div><div style='padding-left:20px; font-size: 13px;'><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />一夜漬けの<b><b>勉強</b></b>。/临阵磨枪。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />化学を<b><b>勉強</b></b>する。/学习化学。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />一生懸命に<b><b>勉強</b></b>する。/努力学习; 拼命用功；刻苦钻研。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />熱心に中国語を<b><b>勉強</b></b>する。/努力学习中国话。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />子どもの<b><b>勉強</b></b>をみてやる。/照看孩子的学习。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />何をやるのも<b><b>勉強</b></b>だと思っています。/我认为干什么都是一种学习。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />いい<b><b>勉強</b></b>になった。/取得了很好的经验； 又学到了一手儿； 学到了不少东西。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />彼女は<b><b>勉強</b></b>がよくできる。/她学习好。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />君の話を聞いていい<b><b>勉強</b></b>をした。/听了你这番话,我长了很多见识。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' /><b><b>勉強</b></b>部屋。/书房；书斋；学习室。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' /><b><b>勉強</b></b>時間。/学习时间；作功课时间。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />受験<b><b>勉強</b></b>。/为考试而用功；考前复习。<br/></div></li><li class='flag'><div>2. <span class='jp_explain soundmark_color' style='color:#333333;'>勤奋,热心（工作）。</span></div><div style='padding-left:20px; font-size: 13px;'><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />こんな夜遅くまでお仕事とはずいぶん<b><b>勉強</b></b>ですね。/这么晚了还在工作,真热心啊！<br/></div></li><li class='flag'><div>3. <span class='jp_explain soundmark_color' style='color:#333333;'>廉价,贱卖。（値引き。）</span></div><div style='padding-left:20px; font-size: 13px;'><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />もっと<b><b>勉強</b></b>できないか/能再便宜些吗?<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />あの店は<b><b>勉強</b></b>する/那个商店贱卖。<br/></div></li></ul><div id='shift_content'><a href='javascript:void(0)' class='open_content jp_open_content'>更多详细释义</a></div><div class='small fr mb10 recommend_box' style='text-align: right;'><a class='gray advice' href='###' id='help_XD1'>帮小D改进本词 </a></div><iframe src='/newDict/jp/improve_new.aspx?sourcedict=-1&jid=3513526&wtype=jc&w=%e5%8b%89%e5%bc%b7&pronounce=べんきょう' style='height: 0px; width: 100%;' scrolling='no' frameborder='0' id='advice_iframe2'></iframe></div></div>
+
+<div id="inc_content_jp_ulExplain_temp" style="display:none;">
+    <div id="ulExplain" class="word_ext por">
+        <a href="javascript:;" class="icon_slideup icon_slide" id="slide"></a>
+        <ul class="tab_title clearfix">
+            <li><a href="#tab1_top" class="selected fix_tab" id="main_content">详细释义</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="ulExt" class="word_ext mt20 por">
+    <a href="javascript:;" class="icon_slideup icon_slide"></a>
+    <ul class="tab_title clearfix">
+        <li><a href="#tabs1" class="selected fix_tab" id="tabReferSent">参考例句</a></li>
+    </ul>
+</div>
+<div class="word_ext_con clearfix">
+    <div id="tabs1" class="tab_pnl" style="display: block;">
+        
+        
+    </div>
+</div>
+
+<script type="text/javascript" src="/newDict/js/jquery_idtabs.js"></script>
+<script type="text/javascript" src="/newDict/js/jp_format.js"></script>
+
+
+                        <!--建议切换语种-->   
+                               
+                        <!--推荐词列表-->                     
+                        
+                        <!--查词无结果页面-->
+                        <form name="ctl02" method="post" action="勉強?w=%u52c9%u5f37&amp;type=jc" id="ctl02">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTkxOTk5NzkxNw9kFhACAw9kFgJmD2QWAmYPZBYCAgEPZBYCAgEPZBYCAgIPFgIeC18hSXRlbUNvdW50ZmQCBg9kFgICAQ8WAh4HVmlzaWJsZWhkAgcPZBYCAgEPZBYCZg9kFgICAQ8WAh4JaW5uZXJodG1sBasEPHRhYmxlPjx0cj48dGg+PGEgaHJlZj0nL2pwL2pjL+OCq+ODrOODvCcgIHRpdGxlPSfov5nkuKror43ml6Xor63mgI7kuYjor7TvvJ8nPuOCq+ODrOODvDwvYT48L3RoPjx0aD48YSBocmVmPScvanAvamMv44KP44KJ44Gz6aSFJyAgdGl0bGU9J+i/meS4quivjeaXpeivreaAjuS5iOivtO+8nyc+44KP44KJ44Gz6aSFPC9hPjwvdGg+PHRoPjxhIGhyZWY9Jy9qcC9qYy/miJDkurrlvI8nICB0aXRsZT0n6L+Z5Liq6K+N5pel6K+t5oCO5LmI6K+077yfJz7miJDkurrlvI88L2E+PC90aD48L3RyPjx0cj48dGQ+PGEgaHJlZj0nL2pwL2pjL+aJq+S4gOaJqycgIHRpdGxlPSfov5nkuKror43ml6Xor63mgI7kuYjor7TvvJ8nPuaJq+S4gOaJqzwvYT48L3RkPjx0ZD48YSBocmVmPScvanAvamMv5LiD6I2J57KlJyAgdGl0bGU9J+i/meS4quivjeaXpeivreaAjuS5iOivtO+8nyc+5LiD6I2J57KlPC9hPjwvdGQ+PHRkPjxhIGhyZWY9Jy9qcC9qYy/niIbosrfjgYQnICB0aXRsZT0n6L+Z5Liq6K+N5pel6K+t5oCO5LmI6K+077yfJz7niIbosrfjgYQ8L2E+PC90ZD48L3RyPjwvdGFibGU+ZAILD2QWAgIBD2QWAmYPEGRkFgECA2QCDg8WAh8BZ2QCEA8WAh8BZ2QCEQ9kFgQCAw8WAh8AAgYWDGYPZBYCZg8VAg/jgb7jgaPjgZfjgZDjgokP44G+44Gj44GX44GQ44KJZAIBD2QWAmYPFQIJ77yT5YiG5YmyCe+8k+WIhuWJsmQCAg9kFgJmDxUCGOODquOCreODg+ODieODleOCoeODs+ODhxjjg6rjgq3jg4Pjg4njg5XjgqHjg7Pjg4dkAgMPZBYCZg8VAgnjgrPjgrnjg6EJ44Kz44K544OhZAIED2QWAmYPFQIJ6IKp44GT44KKCeiCqeOBk+OCimQCBQ9kFgJmDxUCDOOBvuOBo+OBleOCiQzjgb7jgaPjgZXjgolkAgUPFgIfAAIGFgxmD2QWAmYPFQIJ55m+5qW95ZySCeeZvualveWckmQCAQ9kFgJmDxUCFeODluODrOODvOOCreWItuW+oeW8gRXjg5bjg6zjg7zjgq3liLblvqHlvIFkAgIPZBYCZg8VAhXjgZPjgYbjgY/jgYbjgYTjgYzjgY8V44GT44GG44GP44GG44GE44GM44GPZAIDD2QWAmYPFQIz44OA44Kk44Os44Kv44OI44Ki44Kv44K744K544Ki44OX44Oq44O244O844K344On44OzM+ODgOOCpOODrOOCr+ODiOOCouOCr+OCu+OCueOCouODl+ODquODtuODvOOCt+ODp+ODs2QCBA9kFgJmDxUCCemZsOaXpeWQkQnpmbDml6XlkJFkAgUPZBYCZg8VAhLjgZDjgYbjgZzjgpPjgZvjgYQS44GQ44GG44Gc44KT44Gb44GEZAISDxYCHwFoZBgCBRFmb290ZXIyJG11bEhlYWRlcg8PZGZkBRluZXdfdG9wX2RlZmF1bHQkbXVsSGVhZGVyDw9kZmSzK4tXw0ZGEcO1tGPyXtWxwG7VZA==" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0CFC9D75" />
+                        
+                        
+
+<script type="text/javascript">
+//<![CDATA[
+var newdict_jp_jp_content_new_aspx_Path = 'newdict/jp/jp_content_new.aspx';var newdict_jp_jp_content_new_aspx = {};//]]>
+</script>
+</form>
+                        <!--好文推荐-->
+                        
+<!--好文推荐-->
+
+
+                        <!--AD Banner-->
+                          <script type="text/javascript" src="http://common.hjfile.cn/site/js/doT.min.js"></script>  <script type="text/javascript" src="http://common.hjfile.cn/site/js/jquery.bxslider.min.js"></script>  <script type="text/javascript" src="http://common.hjfile.cn/site/js/courseRecommend.js"></script>  <script type="text/javascript" src="http://www.hujiang.com/2010/js/js.cookie.js"></script>  <link rel="stylesheet" type="text/css" href="http://common.hjfile.cn/site/css/courseRecommend.css" />    <div class="course_recommend" id="course_recommend"></div>    <script type="text/javascript">  $(function () {   window.courseRecommend.init(3, window.courseRecommend.getCookie("HJ_UID"), 0, "jp");  });  </script>  
+
+                        <!--社团-->
+                        <div id="panel_shetuan_list">
+                            <p class="subTitle mb10">
+                                沪江社团                               
+                           
+                            </p>
+                            <ul id="shetuan_list" class="clearfix">
+                                <li><a href="http://st.hujiang.com/133681365/" target="_blank">JLPT备考</a></li>
+                                <li><a href="http://st.hujiang.com/136321789/" target="_blank">沪江日语社</a></li>
+                                <li><a href="http://st.hujiang.com/1412161002/" target="_blank">日语外教课堂</a></li>
+                                <li><a href="http://st.hujiang.com/138791224/" target="_blank">零基础学日语</a></li>
+                                <li><a href="http://st.hujiang.com/133681365/mag/" target="_blank">能力考宝典</a></li>
+                            </ul>
+                        </div>
+                        <!--开心词场-->
+                        <div id="panel_cichang_list">
+                            <p class="subTitle mb10">
+                                <a href="http://cichang.hujiang.com" target="_blank">开心词场</a>背单词                               
+                           
+                            </p>
+                            <ul id="cichang_list" class="clearfix">
+                                
+                                <li><a target="_blank" href="http://cichang.hujiang.com/book/1511523170881890" title="日语专八词汇">日语专八词汇</a></li>
+                                
+                                <li><a target="_blank" href="http://cichang.hujiang.com/book/1510789364626812" title="日语口译词汇">日语口译词汇</a></li>
+                                
+                                <li><a target="_blank" href="http://cichang.hujiang.com/book/1511464105068285" title="N1高分词汇三">N1高分词汇三</a></li>
+                                
+                                <li><a target="_blank" href="http://cichang.hujiang.com/book/1511461105068277" title="N1高分词汇二">N1高分词汇二</a></li>
+                                
+                                <li><a target="_blank" href="http://cichang.hujiang.com/book/1511459199156363" title="N1高分词汇一">N1高分词汇一</a></li>
+                                
+                                <li><a target="_blank" href="http://cichang.hujiang.com/book/1511096346184010" title="N1精品词汇">N1精品词汇</a></li>
+                                
+                                <li><a target="_blank" href="http://cichang.hujiang.com/book/1511084364422776" title="N1核心语法">N1核心语法</a></li>
+                                
+                                <li><a target="_blank" href="http://cichang.hujiang.com/book/1510410789210608" title="N1核心词汇">N1核心词汇</a></li>
+                                
+                                <li><a target="_blank" href="http://cichang.hujiang.com/book/1511505613450258" title="必背接续词">必背接续词</a></li>
+                                
+                                <li><a target="_blank" href="http://cichang.hujiang.com/book/1510450181260427" title="拟声拟态词">拟声拟态词</a></li>
+                                
+                            </ul>
+                        </div>
+                        <!--站内文章-->
+                        <div id="panel_site_article" class="site_article" style="display: none">
+                            <p class="subTitle hide mt20">站内文章</p>
+                            <div id="site_search" class="site_content">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- 右侧广告系统 -->
+                <div id="sidebar">
+                    <div class="sidebar_top"></div>
+                    
+<script language="javascript" type="text/javascript">
+    var blnHotMale = false;
+    $(document).ready(function () {
+        $("#lnkHotWord,#lnkHotSearch").click(function () {
+
+            if (!blnHotMale && this.id == "lnkHotMale") { return; }
+            if (blnHotMale && this.id == "lnkHotFeMale") { return; }
+
+            blnHotMale = !blnHotMale;
+
+            if (!blnHotMale) {
+                $("#ulHotMale").show();
+                $("#ulHotFeMale").hide();
+                $("#lnkHotSearch").addClass("linkDisable");
+                $("#lnkHotWord").removeClass("linkDisable");
+            }
+            else {
+                $("#ulHotMale").hide();
+                $("#ulHotFeMale").show();
+                $("#lnkHotSearch").removeClass("linkDisable");
+                $("#lnkHotWord").addClass("linkDisable");
+            }
+            this.blur();
+        });
+    })
+</script>
+    <div class="wep_xd_box mt20">
+        <a href="http://dict.hjenglish.com/mobile/" target="_blank" class="mobile_xd"><i class="icon_mobile"></i>手机小D</a>
+        <a href="http://dict.hjenglish.com/client/" target="_blank" class="pc_xd" style="display:none;"><i class="icon_pc"></i>桌面小D</a>
+        <div class="clear"></div>
+    </div>
+    <script type='text/javascript'>
+(function () {
+function w(s){return document.write(s)}; 
+w('<div class="rightBar_block a6_pic">');
+w('<div id="a6_adspace_182"></div>');
+w('</div>');
+})();
+</script>
+
+
+    <script type="text/javascript">
+        a6adspace = document.createElement('script');
+        a6adspace.type = 'text/javascript';
+        a6adspace.src = 'http://a6.hujiang.com/v2/a.ashx?aid=182';
+        document.getElementById('a6_adspace_182').appendChild(a6adspace);
+
+    </script>
+
+    <div class="rptHot_box mb20 mt20">
+        <ul class="rptHot_tab clearfix">
+            <li class="active"><a href="javascript:;" page-panel="rptHotWord_ul">今日热词</a></li>
+            <li><a href="javascript:;" page-panel="rptHotSearch_ul" >相关搜索</a></li>
+        </ul>
+        <ul id="rptHotWord_ul" class="rptHot_ul">
+            
+                    <li><a href='/jp/jc/まっしぐら'>
+                        まっしぐら</a></li>
+                
+                    <li><a href='/jp/jc/３分割'>
+                        ３分割</a></li>
+                
+                    <li><a href='/jp/jc/リキッドファンデ'>
+                        リキッドファンデ</a></li>
+                
+                    <li><a href='/jp/jc/コスメ'>
+                        コスメ</a></li>
+                
+                    <li><a href='/jp/jc/肩こり'>
+                        肩こり</a></li>
+                
+                    <li><a href='/jp/jc/まっさら'>
+                        まっさら</a></li>
+                
+        </ul>
+        <ul id="rptHotSearch_ul" class="hide rptHot_ul">
+            
+                    <li><a href='/jp/jc/百楽園'>
+                        百楽園</a></li>
+                
+                    <li><a href='/jp/jc/ブレーキ制御弁'>
+                        ブレーキ制御弁</a></li>
+                
+                    <li><a href='/jp/jc/こうくういがく'>
+                        こうくういがく</a></li>
+                
+                    <li><a href='/jp/jc/ダイレクトアクセスアプリヶーション'>
+                        ダイレクトアクセスアプリヶーション</a></li>
+                
+                    <li><a href='/jp/jc/陰日向'>
+                        陰日向</a></li>
+                
+                    <li><a href='/jp/jc/ぐうぜんせい'>
+                        ぐうぜんせい</a></li>
+                
+        </ul>
+    </div>
+    <div class="rightBar_block">
+        <h2 class="h2_nomargin">
+            日语网校</h2>
+        <!-- a6 div -->
+        <div id="a6_adspace_374"></div>
+        <script type="text/javascript">a6adspace = document.createElement('script'); a6adspace.type = 'text/javascript'; a6adspace.src = 'http://a6.hujiang.com/v2/a.ashx?aid=374'; document.getElementById('a6_adspace_374').appendChild(a6adspace);</script>
+        
+    </div>
+    <script type='text/javascript'>
+(function () {
+function w(s){return document.write(s)}; 
+w('<div class="rightBar_block">');
+w('<h2>');
+w('热门话题</h2>');
+w('<ul>');
+w('<li><a href="http://dict.hujiang.com/mobile/" target="_blank">沪江小D手机版，外语随身学！</a></li>');
+w('<li><a href="http://jp.yeshj.com/new/p191860/" target="_blank">沪江小D安卓版上线啦！</a></li>');
+w('<li><a href="http://jobs.yeshj.com/tech " target="_blank">沪江网“广招”技术部人才</a></li>');
+w('<li><a href="http://bulo.yeshj.com/group/topic/270945/" target="_blank">新版小D内测感受贴！</a></li>');
+w('</ul>');
+w('</div>');
+w('<div class="rightBar_block">');
+w('<h2>开心词场背词超爽</h2>');
+w('<ul>');
+w('<li><a href="http://cichang.hujiang.com/book/10563"  target="_blank">日语五十音</a></li>');
+w('<li><a href="http://cichang.hujiang.com/book/10410" target="_blank">N1核心800词汇</a></li>');
+w('<li><a href="http://cichang.hujiang.com/book/10429" target="_blank">N2核心800词汇</a></li>');
+w('<li><a href="http://cichang.hujiang.com/book/10484" target="_blank">N3核心800词汇</a></li>');
+w('<li><a href="http://cichang.hujiang.com/book/10552" target="_blank">N4基础词汇</a></li>');
+w('<li><a href="http://cichang.hujiang.com/book/10532" target="_blank">N5基础词汇</a></li>');
+w('</ul>');
+w('</div>');
+w('<div class="rightBar_block">');
+w('<h2>相关工具</h2>');
+w('<ul>');
+w('<li><a href="http://jp.yeshj.com/new/p23941/page3/" target="_blank">日语汉字输入技巧</a></li>');
+w('<li><a href="http://www.google.com/intl/ja/ime/" target="_blank">日语输入法下载</a></li>');
+w('</ul>');
+w('</div>');
+})();
+</script>
+
+
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <script type="text/JavaScript">
+            GetFlash("ahistory", "/flash/_history.swf", "", 5, 5, false);
+        </script>
+        
+        
+    
+<div id="footer" class="clearfix footer_index">
+    
+    <a href="http://www.hujiang.com/about/" target="_blank" rel="nofollow">关于我们</a><i class="split">|</i><a href="http://www.hujiang.com/about/report/" rel="nofollow" target="_blank">媒体报道</a><i class="split">|</i><a href="http://www.hujiang.com/about/contact/" target="_blank" rel="nofollow">联系我们</a><i class="split">|</i><a href="http://www.hujiang.com/about/biz/" target="_blank" rel="nofollow">商务合作</a><i class="split">|</i><a href="http://jobs.hujiang.com/" target="_blank" rel="nofollow">沪江招聘</a><i class="split">|</i><a href="http://kefu.hujiang.com/" target="_blank" rel="nofollow">帮助中心</a><i class="split">|</i><a href="http://st.hujiang.com/cihui/c2505/" target="_blank" rel="nofollow">意见反馈</a><i class="split">|</i><a href="http://www.hujiang.com/sitemap/" target="_blank" >全站地图</a><i class="split">|</i><a href="http://www.hujiang.com/zt/about/copyright/" target="_blank" rel="nofollow">版权声明</a><i class="split">|</i><a href="/jp/">日语在线翻译</a> Copyright&copy;2007-2016  <a href="http://www.hujiang.com"  target="_blank" rel="nofollow">沪江</a>  <a href="javascript:void(0);" onclick="this.href='http://www.miitbeian.gov.cn/'" target="_blank" rel="nofollow">沪B2-20110096</a> 
+</div>
+    
+<input type="hidden" id="plugin_bdshare" data-args="bdImg=1&bdTop=189"/>
+<div id="p_footer_more" style="z-index:9999;"></div>
+<script type="text/javascript">
+    $(function () {
+        HjDict.Global.CounterType = "jp";
+        HjDict.Common.VisitLog();
+
+        
+    });
+</script>
+<script type="text/javascript">
+    ga_userid = 0;
+    ga_username = "";
+</script>
+
+
+<script type="text/javascript" src="http://common.hjfile.cn/analytics/site/bulo_dict.js?v=2016-02-14"></script>
+<script type="text/javascript" src="/newDict/js/hj-plugins.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            if($(".bdshare-slide-button-box").length>0)
+            {
+                $(".bdshare-slide-button-box").attr("style","z-index:999;");
+            }
+        },20);
+        
+    });
+</script>
+        <!-- </div> -->
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        HjDict.HotLink.Init("dict_jp_word");
+        //加载开心词场列表
+        //$("#cichang_list").append(GetCiChangList());
+        HjDict.Common.ClickTimes("dict_css_new");
+    });
+
+    function AjaxMethod(page, method, ajaxData, fun) {
+        var ajaxReturn = null;
+        var blnAsync = false;
+        if (fun != undefined && typeof (fun) === "function") {
+            blnAsync = true;
+        };
+        var objData;
+        if (ajaxData) {
+            objData = ajaxData;
+        }
+        else {
+            objData = "{}";
+        }
+        $.ajax({
+            type: "post",
+            url: "/" + page + "/" + method,
+            data: objData,
+            datatype: "json",
+            async: blnAsync,
+            cache: false,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                if (data != undefined && data.d != undefined)
+                { ajaxReturn = data.d; }
+                else
+                { ajaxReturn = data; }
+
+                if (blnAsync) {
+                    fun.call();
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus);
+            }
+
+        });
+        return ajaxReturn;
+    }
+</script>
+</html>

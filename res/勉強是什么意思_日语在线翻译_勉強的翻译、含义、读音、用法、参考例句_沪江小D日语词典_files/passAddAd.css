@@ -1,0 +1,29 @@
+.pass_add_ad1{
+    float:right; 
+    margin-right:10px; 
+    position:relative;
+}
+.pass_add_ad1 .time_down{
+    position:absolute; 
+    top:0; 
+    right:0;
+    display:inline-block;
+    width: 84px;
+}
+.pass_add_ad1 .pass_add_img{
+    max-width: 200px;
+    max-height: 40px;
+    border: none;
+}
+.pass_add_ad1 .time_down span{
+    font-family: 'Arial';
+    display: inline-block;
+    width: 28px;
+    text-align: center;
+    color: #fbff86;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bolder;
+    text-shadow:1px 2px 1px #000;
+}

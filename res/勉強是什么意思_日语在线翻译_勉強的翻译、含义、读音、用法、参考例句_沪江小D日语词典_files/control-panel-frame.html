@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/control-panel-frame.html -->
+<html ng-app="spark.extension.content.controlPanel" class="ng-scope"><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/css/tooltip.css">
+    <link rel="stylesheet" href="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/css/control-panel.css">
+    <title></title>
+</head>
+<body ng-controller="controlPanelController" class="ng-scope">
+    <div class="control-panel-container">
+        <div class="new-stuff ng-hide" ng-show="controlPanel.newStuffUrl">
+            <a ng-href="" ng-click="controlPanel.newStuffClicked()" target="_blank">
+                <i18n key="controlPanel_whatsNewText">What's new?</i18n>
+            </a>
+        </div>
+        <div class="control-panel-section-header">
+            <img ng-src="assets/img/control_panel/image-capture.png" src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/img/control_panel/image-capture.png">
+            <div class="control-panel-section-header-text">IMAGE</div>
+        </div>
+        <div class="image-capture-buttons">
+            <div class="capture-button-container">
+                <button class="capture-region-button" ng-click="controlPanel.startRegionCapture()">
+                    <img class="capture-button-img" ng-src="assets/img/control_panel/region.png" src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/img/control_panel/region.png">
+                    <span><i18n key="controlPanel_RegionCaptureLabel">Region</i18n></span>
+                </button>
+            </div>
+            <div class="capture-button-container">
+                <button class="capture-visible-button" ng-click="controlPanel.startVisibleCapture()">
+                    <img class="capture-button-img" ng-src="assets/img/control_panel/visible.png" src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/img/control_panel/visible.png">
+                    <span><i18n key="controlPanel_VisibleCaptureLabel">Visible</i18n></span>
+                </button>
+            </div>
+            <div class="capture-button-container">
+                <button ng-click="controlPanel.scrollingCapture()">
+                    <img class="capture-button-img" ng-src="assets/img/control_panel/scrolling.png" src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/img/control_panel/scrolling.png">
+                    <span><i18n key="controlPanel_scrollingCaptureLabel">Scrolling</i18n></span>
+                </button>
+            </div>
+        </div>
+        <div class="control-panel-section-header">
+            <img ng-src="assets/img/control_panel/video-capture.png" src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/img/control_panel/video-capture.png">
+            <div class="control-panel-section-header-text">VIDEO</div>
+        </div>
+        <div class="video-capture-buttons">
+            <div class="capture-button-container">
+                <button class="capture-video-button" ng-click="controlPanel.startVideoCapture()">
+                    <img class="capture-button-img" ng-src="assets/img/control_panel/screen.png" src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/img/control_panel/screen.png">
+                    <span><i18n key="controlPanel_desktopCaptureLabel">Screen</i18n></span>
+                </button>
+            </div>
+            <!-- ngIf: controlPanel.showCamera == true -->
+            <div class="capture-button-container">
+                <button class="mic-settings-button" ng-click="controlPanel.showMicSettings()">
+                    <img class="capture-button-img" ng-src="assets/img/control_panel/mic-off.png" src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/img/control_panel/mic-off.png">
+                </button>
+            </div>
+        </div>
+        <div class="control-panel-footer">
+            <button class="control-panel-library-button" ng-click="controlPanel.openDefaultFolder()">
+                <img class="capture-button-img" ng-src="assets/img/control_panel/drive.png" src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/img/control_panel/drive.png">
+                <span><i18n key="controlPanel_LibraryLabel">My captures</i18n></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="control-panel-notification" ng-class="{&#39;control-panel-notification-shown&#39;: controlPanel.classroomAvailable}">
+        <div class="control-panel-notification-icon">
+            <img ng-src="assets/img/classroom/classroomIcon.png" class="classroom-notification-icon" src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/img/classroom/classroomIcon.png">
+        </div>
+        <div class="control-panel-notification-text">
+            <i18n key="classroom_linkText">It appears you are using Classroom by Google, would you like to enable sharing to this destination?</i18n>
+        </div>
+        <div class="control-panel-notification-buttons">
+            <button class="control-panel-notification-button-confirm" ng-click="controlPanel.enableClassroom()">
+                <i18n key="classroom_linkConfirm">ENABLE</i18n>
+            </button>
+            <button class="control-panel-notification-button-dismiss" ng-click="controlPanel.dismissClassroom()">
+                <i18n key="classroom_linkDismiss">Dismiss</i18n>
+            </button>
+        </div>
+    </div>
+
+<script src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/vendor/angular/angular.js"></script>
+<script src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/vendor/angular-retina.js"></script>
+<script src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/js/common.js"></script>
+<script src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/js/extension.common.js"></script>
+<script src="chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/js/controlPanel.js"></script>
+
+
+</body></html>

@@ -1,0 +1,109 @@
+.fix_questionnaire_btn{
+    position: fixed;
+    bottom: 5%;
+    left: 20px;
+    z-index: 75;
+    display: none;
+    cursor: pointer;
+}
+.fix_questionnaire_btn img{
+    width: 150px;
+}
+.fix_questionnaire_dialog_pagebg{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.8;
+    filter:alpha(opacity=80);
+    position: fixed;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom:0;
+    z-index: 10001;
+    display: none;
+}
+.fix_questionnaire_dialog{
+    position: fixed;
+    width: 700px;
+    height: 534px;
+    left: 50%;
+    top:50%;
+    margin-left: -350px;
+    margin-top: -267px;
+    background: #FFF;
+    z-index: 10002;
+    background: url("http://i2.w.hjfile.cn/doc/201508/1acd7d186dba4f36b0f16f5de990d132.png") no-repeat;
+    display: none;
+}
+.fix_questionnaire_dialog iframe{
+    border: none;
+    margin-top: 81px;
+    margin-left: 86px;
+}
+.fix_questionnaire_dialog_close{
+    position: absolute;
+    right: 70px;
+    top: 40px;
+    background: url('http://i2.w.hjfile.cn/doc/201508/8c4ad3e6a542456491872d60b78f00b2.png');
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animated.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+
+
+.animated {
+-webkit-animation-duration: 1s;
+   -moz-animation-duration: 1s;
+     -o-animation-duration: 1s;
+        animation-duration: 1s;
+-webkit-animation-fill-mode: both;
+   -moz-animation-fill-mode: both;
+     -o-animation-fill-mode: both;
+        animation-fill-mode: both;
+}
