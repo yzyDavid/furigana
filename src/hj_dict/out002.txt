@@ -11,11 +11,11 @@
     <meta name="keywords" content="词典,辞典,在线翻译,解释,意思,英语词典,日语词典,日语,英语,日语在线翻译" />
     <meta name="Description" content="沪江小D日语在线翻译是免费日语在线翻译网站,提供勉強的翻译，勉強是什么意思,勉強的音标与发音,勉強的含义及用法，以及勉強的参考例句,勉強是什么意思,解析勉強的含义。" />
     <title>勉強是什么意思_日语在线翻译_勉強的翻译、含义、读音、用法、参考例句_沪江小D日语词典</title>
-    <link rel='stylesheet' href='http://res.d.hjfile.cn/app/css/output/$nc_new_base_en_css$nc_base_new_css$ac_tipswindown_css$nc_style_new_css$nc_leftbar_css$nc_content_new_css$nc_jp_input_css$nc_jp_css$nc_noword_css_635616053470000000.css' type='text/css'/>
+    <link rel='stylesheet' href='http://res.d.hjfile.cn/app/css/output/$nc_new_base_en_css$nc_base_new_css$ac_tipswindown_css$nc_style_new_css$nc_leftbar_css$nc_content_new_css$nc_jp_input_css$nc_jp_css$nc_noword_css_635609142230000000.css' type='text/css'/>
     <link rel="shortcut icon" href="/jp/favicon.ico" type="image/x-icon" />
     <link rel="search" type="application/opensearchdescription+xml" href="/hjdict_ie7_jp.xml" title="沪江小D-日语" />
-    <script src='http://res.d.hjfile.cn/app/js/output/$js_jquery-last_js$aj_jplayer_js$aj_tts_js$aj_flash_js$aj_hjfunctions_js$nj_header_js$nj_base_js_635780208779175977.js' type='text/javascript'></script>
-    <script src='http://res.d.hjfile.cn/app/js/output/$nj_fastlogin_js$nj_sugdroplist_js$nj_jp_input_js$nj_jp_inner_js$aj_site_search_js$aj__jp_content_format_js_635870688360368702.js' type='text/javascript'></script>
+    <script src='http://res.d.hjfile.cn/app/js/output/$js_jquery-last_js$aj_jplayer_js$aj_tts_js$aj_flash_js$aj_hjfunctions_js$nj_header_js$nj_base_js_635780230557570000.js' type='text/javascript'></script>
+    <script src='http://res.d.hjfile.cn/app/js/output/$nj_fastlogin_js$nj_sugdroplist_js$nj_jp_input_js$nj_jp_inner_js$aj_site_search_js$aj__jp_content_format_js_635870696847014000.js' type='text/javascript'></script>
     
     <script type="text/javascript" src='http://pass.hujiang.com/static/js/biz/hjpassport-async.js'></script>
     <script language="javascript" type="text/javascript"> 
@@ -410,11 +410,11 @@
   <script type="text/javascript" src="http://common.hjfile.cn/site/js/bottomActive1212.js"></script>  <link rel="stylesheet" type="text/css" href="http://common.hjfile.cn/site/css/questionnaire.css?ticket=20151117">    <script type="text/javascript" src="http://common.hjfile.cn/site/js/questionnaire.js?ticket=20151117"></script>    <script type="text/javascript">  $(function () {      bottomActive1212.init("dict");      window.fixQuestionnaire.init("dict");  });  </script>  
 
 <span id="new_top_default_inc_new_header3_pnl_newHead" class="club_Header_pnl_newHead">
-    <link rel='stylesheet' href='http://res.d.hjfile.cn/app/css/output/$nc_new_head_css_635834599308178076.css' type='text/css'/>
+    <link rel='stylesheet' href='http://res.d.hjfile.cn/app/css/output/$nc_new_head_css_635834603433006000.css' type='text/css'/>
     <script src="/newDict/js/jquery.json-2.2.min.js" type="text/javascript"></script>
     
     <script type="text/javascript" src='http://pass.hujiang.com/static/js/biz/hjpassport-async.js'></script>
-    <script src='http://res.d.hjfile.cn/app/js/output/$nj_new_head_js$nj_messagetip_js$nj_fastlogin_js_635773927166062907.js' type='text/javascript'></script>
+    <script src='http://res.d.hjfile.cn/app/js/output/$nj_new_head_js$nj_messagetip_js$nj_fastlogin_js_635773933279772000.js' type='text/javascript'></script>
     <div id="cls_pnlHeader_wrap" class="cls_pnlHeader_wrap">
         <div id="cls_pnlHeader">
             <div id="cls_header_AppSlide" class="">
@@ -594,10 +594,6 @@
 </span>
 </div>
 <div class="clear"></div>
-                    </div>
-                    
-                    <div style="float: right; margin-top: 57px; width: 225px;">
-                        <a href="http://www.hjclass.com/classzt/MKTTopic_842?ch_campaign=cls10149&ch_source=itool_dict_0_nxccanycwzl" target="_blank">课程学完返学费</a>
                     </div>
                     
                     <div class="clear"></div>
@@ -887,7 +883,7 @@ w('<li><a href="http://www.google.co.jp/search?hl=ja&q=&btnG=Google+%E6%A4%9C%E7
         background-color: #C9C9C9;
     }
 </style>
-<div class='headword_div_jp' id='headword_div' style='display:none;'><span id='ty_list' style='display: none;'>与 <span id='headword_jp'>勉強</span> 同音的词有：</span><span class='description_br' style='display: none;'><br /></span><span id='tx_list' style='display: none;'>与 <span id='headword_jp'>勉強</span> 同形的词有：<a class='headword_jp_1'>勉強(benkyou)</a></span><span id='showall_jp' class='showall_default'>查看全部</span></div><div id='headword_jp_1' class='jp_word_comment'><div class='jp_title_td'><h1 title='日语单词'><span id='jpword_1' class='jpword'>勉強</span><span class='jp_ico' style='vertical-align: 2px; line-height: 12px;'>日</span><div class='cp_box clear'><div class="cp_star_box fl"><i class="icon_star on"></i><i class="icon_star on"></i><i class="icon_star on"></i><i class="icon_star on"></i><i class="icon_star"></i></div><a href="http://cichang.hujiang.com/book/1510552044490638" target="_blank" class="link_recite fl" title="N4基础词汇"></a><div id="cpTips_box" class="hide cpTips_box"><span class="cpTips_con txt_c">高频词，一定要记得哦！</span><i class="icon_arrow"></i><i class="icon_inner_arrow"></i></div></div><span class="jpAddWord" style="padding-left:5px;font-weight: normal; font-size:12px;" id="amw_panel_1"><a href="javascript:void(0);" onclick="addMydictWord(1,21,0,3513526,'jp','cn');return false;" style="width:16px;height:16px;" title="添加到我的生词本"><img width="16" height="16" align="absmiddle" src="/images/btn_myword_add.gif"></a></span><span style="font-family:verdana;font-weight:300;padding-left:15px;font-size:12px;"><a href="http://www.hjclass.com/classzt/MKTTopic_842?ch_campaign=cls10149&ch_source=itool_dict_0_ccjgfyycwzl" target="_blank">开学福利到，外语学完返学费</a></span></h1><input type='hidden' value='勉強' id='amw_word_1' /></div><div style='line-height: 24px; height: 24px; ' class='mt10'><span id='kana_1' class='trs_jp bold' title='假名'>【べんきょう】</span><span class='trs_jp  bold' title='罗马音'>【benkyou】</span><span class='tone_jp' title='音调'>◎</span><span title='日语发音  bold' class='jpSound'><script type='text/javascript' language='JavaScript'>GetTTSVoice("http://d1.g.hjfile.cn/voice/jpsound/C744.mp3");</script></span></div><div class='word_ext_con clearfix' id='tab1_top'><div class='flag big_type tip_content_item' style='margin-top:10px;' title='名・自他・サ变/三类'>【名・自他・サ变/三类】 </div><ul class='tip_content_item jp_definition_com'><li class='flag'><div>1. <span class='jp_explain soundmark_color' style='color:#333333;'>用功学习，用功读书；学习知识，积累经验。</span></div><div style='padding-left:20px; font-size: 13px;'><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />一夜漬けの<b><b>勉強</b></b>。/临阵磨枪。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />化学を<b><b>勉強</b></b>する。/学习化学。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />一生懸命に<b><b>勉強</b></b>する。/努力学习; 拼命用功；刻苦钻研。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />熱心に中国語を<b><b>勉強</b></b>する。/努力学习中国话。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />子どもの<b><b>勉強</b></b>をみてやる。/照看孩子的学习。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />何をやるのも<b><b>勉強</b></b>だと思っています。/我认为干什么都是一种学习。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />いい<b><b>勉強</b></b>になった。/取得了很好的经验； 又学到了一手儿； 学到了不少东西。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />彼女は<b><b>勉強</b></b>がよくできる。/她学习好。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />君の話を聞いていい<b><b>勉強</b></b>をした。/听了你这番话,我长了很多见识。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' /><b><b>勉強</b></b>部屋。/书房；书斋；学习室。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' /><b><b>勉強</b></b>時間。/学习时间；作功课时间。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />受験<b><b>勉強</b></b>。/为考试而用功；考前复习。<br/></div></li><li class='flag'><div>2. <span class='jp_explain soundmark_color' style='color:#333333;'>勤奋,热心（工作）。</span></div><div style='padding-left:20px; font-size: 13px;'><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />こんな夜遅くまでお仕事とはずいぶん<b><b>勉強</b></b>ですね。/这么晚了还在工作,真热心啊！<br/></div></li><li class='flag'><div>3. <span class='jp_explain soundmark_color' style='color:#333333;'>廉价,贱卖。（値引き。）</span></div><div style='padding-left:20px; font-size: 13px;'><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />もっと<b><b>勉強</b></b>できないか/能再便宜些吗?<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />あの店は<b><b>勉強</b></b>する/那个商店贱卖。<br/></div></li></ul><div id='shift_content'><a href='javascript:void(0)' class='open_content jp_open_content'>更多详细释义</a></div><div class='small fr mb10 recommend_box' style='text-align: right;'><a class='gray advice' href='###' id='help_XD1'>帮小D改进本词 </a></div><iframe src='/newDict/jp/improve_new.aspx?sourcedict=-1&jid=3513526&wtype=jc&w=%e5%8b%89%e5%bc%b7&pronounce=べんきょう' style='height: 0px; width: 100%;' scrolling='no' frameborder='0' id='advice_iframe2'></iframe></div></div>
+<div class='headword_div_jp' id='headword_div' style='display:none;'><span id='ty_list' style='display: none;'>与 <span id='headword_jp'>勉強</span> 同音的词有：</span><span class='description_br' style='display: none;'><br /></span><span id='tx_list' style='display: none;'>与 <span id='headword_jp'>勉強</span> 同形的词有：<a class='headword_jp_1'>勉強(benkyou)</a></span><span id='showall_jp' class='showall_default'>查看全部</span></div><div id='headword_jp_1' class='jp_word_comment'><div class='jp_title_td'><h1 title='日语单词'><span id='jpword_1' class='jpword'>勉強</span><span class='jp_ico' style='vertical-align: 2px; line-height: 12px;'>日</span><div class='cp_box clear'><div class="cp_star_box fl"><i class="icon_star on"></i><i class="icon_star on"></i><i class="icon_star on"></i><i class="icon_star on"></i><i class="icon_star"></i></div><a href="http://cichang.hujiang.com/book/1510552044490638" target="_blank" class="link_recite fl" title="N4基础词汇"></a><div id="cpTips_box" class="hide cpTips_box"><span class="cpTips_con txt_c">高频词，一定要记得哦！</span><i class="icon_arrow"></i><i class="icon_inner_arrow"></i></div></div><span class="jpAddWord" style="padding-left:5px;font-weight: normal; font-size:12px;" id="amw_panel_1"><a href="javascript:void(0);" onclick="addMydictWord(1,21,0,3513526,'jp','cn');return false;" style="width:16px;height:16px;" title="添加到我的生词本"><img width="16" height="16" align="absmiddle" src="/images/btn_myword_add.gif"></a></span></h1><input type='hidden' value='勉強' id='amw_word_1' /></div><div style='line-height: 24px; height: 24px; ' class='mt10'><span id='kana_1' class='trs_jp bold' title='假名'>【べんきょう】</span><span class='trs_jp  bold' title='罗马音'>【benkyou】</span><span class='tone_jp' title='音调'>◎</span><span title='日语发音  bold' class='jpSound'><script type='text/javascript' language='JavaScript'>GetTTSVoice("http://d1.g.hjfile.cn/voice/jpsound/C744.mp3");</script></span></div><div class='word_ext_con clearfix' id='tab1_top'><div class='flag big_type tip_content_item' style='margin-top:10px;' title='名・自他・サ变/三类'>【名・自他・サ变/三类】 </div><ul class='tip_content_item jp_definition_com'><li class='flag'><div>1. <span class='jp_explain soundmark_color' style='color:#333333;'>用功学习，用功读书；学习知识，积累经验。</span></div><div style='padding-left:20px; font-size: 13px;'><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />一夜漬けの<b><b>勉強</b></b>。/临阵磨枪。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />化学を<b><b>勉強</b></b>する。/学习化学。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />一生懸命に<b><b>勉強</b></b>する。/努力学习; 拼命用功；刻苦钻研。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />熱心に中国語を<b><b>勉強</b></b>する。/努力学习中国话。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />子どもの<b><b>勉強</b></b>をみてやる。/照看孩子的学习。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />何をやるのも<b><b>勉強</b></b>だと思っています。/我认为干什么都是一种学习。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />いい<b><b>勉強</b></b>になった。/取得了很好的经验； 又学到了一手儿； 学到了不少东西。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />彼女は<b><b>勉強</b></b>がよくできる。/她学习好。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />君の話を聞いていい<b><b>勉強</b></b>をした。/听了你这番话,我长了很多见识。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' /><b><b>勉強</b></b>部屋。/书房；书斋；学习室。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' /><b><b>勉強</b></b>時間。/学习时间；作功课时间。<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />受験<b><b>勉強</b></b>。/为考试而用功；考前复习。<br/></div></li><li class='flag'><div>2. <span class='jp_explain soundmark_color' style='color:#333333;'>勤奋,热心（工作）。</span></div><div style='padding-left:20px; font-size: 13px;'><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />こんな夜遅くまでお仕事とはずいぶん<b><b>勉強</b></b>ですね。/这么晚了还在工作,真热心啊！<br/></div></li><li class='flag'><div>3. <span class='jp_explain soundmark_color' style='color:#333333;'>廉价,贱卖。（値引き。）</span></div><div style='padding-left:20px; font-size: 13px;'><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />もっと<b><b>勉強</b></b>できないか/能再便宜些吗?<br/><img src='http://dict.hjenglish.com/images/icon_star.gif' align='absmiddle' />あの店は<b><b>勉強</b></b>する/那个商店贱卖。<br/></div></li></ul><div id='shift_content'><a href='javascript:void(0)' class='open_content jp_open_content'>更多详细释义</a></div><div class='small fr mb10 recommend_box' style='text-align: right;'><a class='gray advice' href='###' id='help_XD1'>帮小D改进本词 </a></div><iframe src='/newDict/jp/improve_new.aspx?sourcedict=-1&jid=3513526&wtype=jc&w=%e5%8b%89%e5%bc%b7&pronounce=べんきょう' style='height: 0px; width: 100%;' scrolling='no' frameborder='0' id='advice_iframe2'></iframe></div></div>
 
 <div id="inc_content_jp_ulExplain_temp" style="display:none;">
     <div id="ulExplain" class="word_ext por">
@@ -921,7 +917,7 @@ w('<li><a href="http://www.google.co.jp/search?hl=ja&q=&btnG=Google+%E6%A4%9C%E7
                         
                         <!--查词无结果页面-->
                         <form name="ctl02" method="post" action="勉強?w=%u52c9%u5f37&amp;type=jc" id="ctl02">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTkxOTk5NzkxNw9kFhACAw9kFgJmD2QWAmYPZBYCAgEPZBYCAgEPZBYCAgIPFgIeC18hSXRlbUNvdW50ZmQCBg9kFgICAQ8WAh4HVmlzaWJsZWhkAgcPZBYCAgEPZBYCZg9kFgICAQ8WAh4JaW5uZXJodG1sBaUEPHRhYmxlPjx0cj48dGg+PGEgaHJlZj0nL2pwL2pjL+WmguaciCcgIHRpdGxlPSfov5nkuKror43ml6Xor63mgI7kuYjor7TvvJ8nPuWmguaciDwvYT48L3RoPjx0aD48YSBocmVmPScvanAvamMv44Kr44Os44O8JyAgdGl0bGU9J+i/meS4quivjeaXpeivreaAjuS5iOivtO+8nyc+44Kr44Os44O8PC9hPjwvdGg+PHRoPjxhIGhyZWY9Jy9qcC9qYy/jgo/jgonjgbPppIUnICB0aXRsZT0n6L+Z5Liq6K+N5pel6K+t5oCO5LmI6K+077yfJz7jgo/jgonjgbPppIU8L2E+PC90aD48L3RyPjx0cj48dGQ+PGEgaHJlZj0nL2pwL2pjL+aIkOS6uuW8jycgIHRpdGxlPSfov5nkuKror43ml6Xor63mgI7kuYjor7TvvJ8nPuaIkOS6uuW8jzwvYT48L3RkPjx0ZD48YSBocmVmPScvanAvamMv5omr5LiA5omrJyAgdGl0bGU9J+i/meS4quivjeaXpeivreaAjuS5iOivtO+8nyc+5omr5LiA5omrPC9hPjwvdGQ+PHRkPjxhIGhyZWY9Jy9qcC9qYy/niIbosrfjgYQnICB0aXRsZT0n6L+Z5Liq6K+N5pel6K+t5oCO5LmI6K+077yfJz7niIbosrfjgYQ8L2E+PC90ZD48L3RyPjwvdGFibGU+ZAILD2QWAgIBD2QWAmYPEGRkFgECA2QCDg8WAh8BZ2QCEA8WAh8BZ2QCEQ9kFgQCAw8WAh8AAgYWDGYPZBYCZg8VAg/jgb7jgaPjgZfjgZDjgokP44G+44Gj44GX44GQ44KJZAIBD2QWAmYPFQIJ77yT5YiG5YmyCe+8k+WIhuWJsmQCAg9kFgJmDxUCGOODquOCreODg+ODieODleOCoeODs+ODhxjjg6rjgq3jg4Pjg4njg5XjgqHjg7Pjg4dkAgMPZBYCZg8VAgnjgrPjgrnjg6EJ44Kz44K544OhZAIED2QWAmYPFQIJ6IKp44GT44KKCeiCqeOBk+OCimQCBQ9kFgJmDxUCDOOBvuOBo+OBleOCiQzjgb7jgaPjgZXjgolkAgUPFgIfAAIGFgxmD2QWAmYPFQIJ5Lit57Kf6YeOCeS4reeyn+mHjmQCAQ9kFgJmDxUCFeOBteOBqOOBhuOBm+OCk+OBk+OBhhXjgbXjgajjgYbjgZvjgpPjgZPjgYZkAgIPZBYCZg8VAgbniqzkuLgG54qs5Li4ZAIDD2QWAmYPFQIG5YmH5a6aBuWJh+WummQCBA9kFgJmDxUCDOOBiuOChOOBmeOBvwzjgYrjgoTjgZnjgb9kAgUPZBYCZg8VAiTjg4vjg6Xjg7zjgq/jg6rjgqjjg7zjgrfjg6fjg7Pno4HnlYwk44OL44Ol44O844Kv44Oq44Ko44O844K344On44Oz56OB55WMZAISDxYCHwFoZBgCBRFmb290ZXIyJG11bEhlYWRlcg8PZGZkBRluZXdfdG9wX2RlZmF1bHQkbXVsSGVhZGVyDw9kZmRpNCKswoE/Yc2BHF4kbfEd3ENg4g==" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTkxOTk5NzkxNw9kFhACAw9kFgJmD2QWAmYPZBYCAgEPZBYCAgEPZBYCAgIPFgIeC18hSXRlbUNvdW50ZmQCBg9kFgICAQ8WAh4HVmlzaWJsZWhkAgcPZBYCAgEPZBYCZg9kFgICAQ8WAh4JaW5uZXJodG1sBasEPHRhYmxlPjx0cj48dGg+PGEgaHJlZj0nL2pwL2pjL+OCq+ODrOODvCcgIHRpdGxlPSfov5nkuKror43ml6Xor63mgI7kuYjor7TvvJ8nPuOCq+ODrOODvDwvYT48L3RoPjx0aD48YSBocmVmPScvanAvamMv44KP44KJ44Gz6aSFJyAgdGl0bGU9J+i/meS4quivjeaXpeivreaAjuS5iOivtO+8nyc+44KP44KJ44Gz6aSFPC9hPjwvdGg+PHRoPjxhIGhyZWY9Jy9qcC9qYy/miJDkurrlvI8nICB0aXRsZT0n6L+Z5Liq6K+N5pel6K+t5oCO5LmI6K+077yfJz7miJDkurrlvI88L2E+PC90aD48L3RyPjx0cj48dGQ+PGEgaHJlZj0nL2pwL2pjL+aJq+S4gOaJqycgIHRpdGxlPSfov5nkuKror43ml6Xor63mgI7kuYjor7TvvJ8nPuaJq+S4gOaJqzwvYT48L3RkPjx0ZD48YSBocmVmPScvanAvamMv5LiD6I2J57KlJyAgdGl0bGU9J+i/meS4quivjeaXpeivreaAjuS5iOivtO+8nyc+5LiD6I2J57KlPC9hPjwvdGQ+PHRkPjxhIGhyZWY9Jy9qcC9qYy/niIbosrfjgYQnICB0aXRsZT0n6L+Z5Liq6K+N5pel6K+t5oCO5LmI6K+077yfJz7niIbosrfjgYQ8L2E+PC90ZD48L3RyPjwvdGFibGU+ZAILD2QWAgIBD2QWAmYPEGRkFgECA2QCDg8WAh8BZ2QCEA8WAh8BZ2QCEQ9kFgQCAw8WAh8AAgYWDGYPZBYCZg8VAg/jgb7jgaPjgZfjgZDjgokP44G+44Gj44GX44GQ44KJZAIBD2QWAmYPFQIJ77yT5YiG5YmyCe+8k+WIhuWJsmQCAg9kFgJmDxUCGOODquOCreODg+ODieODleOCoeODs+ODhxjjg6rjgq3jg4Pjg4njg5XjgqHjg7Pjg4dkAgMPZBYCZg8VAgnjgrPjgrnjg6EJ44Kz44K544OhZAIED2QWAmYPFQIJ6IKp44GT44KKCeiCqeOBk+OCimQCBQ9kFgJmDxUCDOOBvuOBo+OBleOCiQzjgb7jgaPjgZXjgolkAgUPFgIfAAIGFgxmD2QWAmYPFQIS44K144Kk44OJ44Kr44OQ44O8EuOCteOCpOODieOCq+ODkOODvGQCAQ9kFgJmDxUCGOOBu+OBhuOCj+OBi+OBlOOBhuOBtuOBpBjjgbvjgYbjgo/jgYvjgZTjgYbjgbbjgaRkAgIPZBYCZg8VAhjjgabjgpPjgoHjgaTjgZfjgpPjgZTjgYYY44Gm44KT44KB44Gk44GX44KT44GU44GGZAIDD2QWAmYPFQIJ5aSn5rKz5YaFCeWkp+ays+WGhWQCBA9kFgJmDxUCFeOCrOODs+ODnue3muWOmuOBleioiBXjgqzjg7Pjg57nt5rljprjgZXoqIhkAgUPZBYCZg8VAgnosYrlsqHkuIoJ6LGK5bKh5LiKZAISDxYCHwFoZBgCBRFmb290ZXIyJG11bEhlYWRlcg8PZGZkBRluZXdfdG9wX2RlZmF1bHQkbXVsSGVhZGVyDw9kZmQIu2yE8JF2Zvq/kA6VcrhXk7rCHQ==" />
 
 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0CFC9D75" />
                         
@@ -1074,23 +1070,23 @@ w('</div>');
         </ul>
         <ul id="rptHotSearch_ul" class="hide rptHot_ul">
             
-                    <li><a href='/jp/jc/中粟野'>
-                        中粟野</a></li>
+                    <li><a href='/jp/jc/サイドカバー'>
+                        サイドカバー</a></li>
                 
-                    <li><a href='/jp/jc/ふとうせんこう'>
-                        ふとうせんこう</a></li>
+                    <li><a href='/jp/jc/ほうわかごうぶつ'>
+                        ほうわかごうぶつ</a></li>
                 
-                    <li><a href='/jp/jc/犬丸'>
-                        犬丸</a></li>
+                    <li><a href='/jp/jc/てんめつしんごう'>
+                        てんめつしんごう</a></li>
                 
-                    <li><a href='/jp/jc/則定'>
-                        則定</a></li>
+                    <li><a href='/jp/jc/大河内'>
+                        大河内</a></li>
                 
-                    <li><a href='/jp/jc/おやすみ'>
-                        おやすみ</a></li>
+                    <li><a href='/jp/jc/ガンマ線厚さ計'>
+                        ガンマ線厚さ計</a></li>
                 
-                    <li><a href='/jp/jc/ニュークリエーション磁界'>
-                        ニュークリエーション磁界</a></li>
+                    <li><a href='/jp/jc/豊岡上'>
+                        豊岡上</a></li>
                 
         </ul>
     </div>
@@ -1168,7 +1164,7 @@ w('</div>');
 </script>
 
 
-<script type="text/javascript" src="http://common.hjfile.cn/analytics/site/bulo_dict.js?v=2016-02-18"></script>
+<script type="text/javascript" src="http://common.hjfile.cn/analytics/site/bulo_dict.js?v=2016-02-14"></script>
 <script type="text/javascript" src="/newDict/js/hj-plugins.js"></script>
 
 <script type="text/javascript">

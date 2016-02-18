@@ -5,6 +5,7 @@
 # import codecs
 
 import requests
+import re
 
 DEBUG = True
 
@@ -30,3 +31,7 @@ def search_word(word):
         print(r.encoding)
         with open('out.txt', 'w', encoding='utf-8') as fp:
             fp.write(content_str)
+
+    kana = ''
+    re1_str = r'<span id="kana_1" class="trs_jp bold" title="假名">【(\w+)】</span>'
+    re2_str = r'<span id="kana_1" class="trs_jp bold" title="假名"><font color="red">【(\w+)】</font></span>'

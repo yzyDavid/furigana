@@ -41,8 +41,10 @@ def save(filename):
     fp = open(filename, 'w', encoding='utf-8')
     for index in rep_dict:
         fp.write(index)
+        fp.write('\n')
         fp.write(rep_dict[index])
-        fp.write('')
+        fp.write('\n')
+        fp.write('\n')
     fp.close()
 
 
