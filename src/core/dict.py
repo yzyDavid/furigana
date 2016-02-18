@@ -30,11 +30,11 @@ def load(filename):
 
 
 def load_dict(last_num):
-    load_processed(r'../res/dict/dict_processed.txt')
+    load_processed(r'../res/dict_processed.txt')
     for i in range(0, last_num):
         name = '../res/dict' + '%03d' % i + '.txt'
         load(name)
-    save(r'../res/dict/dict_processed.txt')
+    save(r'../res/dict_processed.txt')
 
 
 def save(filename):
@@ -42,7 +42,7 @@ def save(filename):
     for index in rep_dict:
         fp.write(index)
         fp.write(rep_dict[index])
-        fp.write()
+        fp.write('')
     fp.close()
 
 
