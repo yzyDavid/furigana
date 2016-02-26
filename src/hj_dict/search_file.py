@@ -1,7 +1,7 @@
 import requests
 import re
 
-str_re_kanji = r'[/u3400-/u9FFF/uF900-/uFAFF]+'
+str_re_kanji = r'[\u3400-\u9FFF\uF900-\uFAFF]+'
 
 
 def search_file(filename: str):
@@ -15,4 +15,9 @@ def search_file(filename: str):
         if not fp:
             return None
         for line in fp:
+            if line.endswith('\n'):
+                line = line[0:-1]
+            length = len(line)
+            line = line.split(' ').join()
+
             pass
