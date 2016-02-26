@@ -1,7 +1,7 @@
 import re
 from src.hj_dict.search_word import search_word
 
-search_word('足音')
+print(search_word('足音'))
 search_word('勉強')
 
 '''

@@ -7,59 +7,40 @@
 import requests
 import re
 
-DEBUG = False
+DEBUG = True
 
 BASIC_URL = r'http://dict.hjenglish.com/jp/jc/'
+str_1_start = r"<span id='kana_1' class='trs_jp bold' title='假名'>【"
+str_1_end = r'】</span>'
+str_2_start = r"<span id='kana_1' class='trs_jp bold' title='假名'><font color='red'>"
+str_2_end = r'】</font></span>'
+str_re_bracket = r'(\S+)'
 
 
-# def search_word(word):
-#    basic_url = r'http://dict.hjenglish.com/jp/jc/'
-#    search_url = basic_url + word
-#    #search_url = search_url.encode('ascii')
-#    fp = ur.urlopen(search_url)
-#    html_str = fp.read().decode('utf-8')
-#    print(html_str)
-
-def search_word(word):
+def search_word(word: str):
+    """
+    this function should search only one word given and return it's furigana.
+    return None if no result can be found
+    :type word: str
+    """
     search_url = BASIC_URL + word
-    r = requests.get(search_url)
-    content_str = r.content.decode('utf-8')
-    content_str = re.sub('\n', '', content_str)
-    content_str = ''.join(content_str.split())
+    content_str = requests.get(search_url).content.decode('utf-8')
 
+    str_1_re = str_1_start + str_re_bracket + str_1_end
+    re_1 = re.compile(str_1_re)
+    result_1 = re_1.search(content_str)
+    start_pos_1 = content_str.find(str_1_start)
+    end_pos_1 = content_str.find(str_1_end)
     if DEBUG:
-        '''
-        print(search_url)
-        print(r.url)
-        print(content_str)
-        print(r.encoding)
-        '''
-        with open('out.txt', 'w', encoding='utf-8') as fp:
-            fp.write(content_str)
+        print(start_pos_1, end_pos_1)
+        print(result_1.groups())
+    if result_1:
+        return result_1.group(1)
 
-    if DEBUG:
-        with open('../../res/html_part.txt', encoding='utf-8') as fpsaved:
-            content_str = fpsaved.readline()
+    str_2_re = str_2_start + str_re_bracket + str_2_end
+    re_2 = re.compile(str_2_re)
+    result_2 = re_2.search(content_str)
+    if result_2:
+        return result_2.group(1)
 
-    kana = ''
-    # re1_str = r'([/u2E80-/u9FFF]+)'
-    re1_str = '假名">【([/u2E80-/u9FFF]+)】<'
-    re1_str = 'title="假名">【(.*?)】<'
-    # re1_str = r'<span id="kana_1" class="trs_jp bold" title="假名">【(\w+)】</span>'
-    re2_str = '<span id="kana_1" class="trs_jp bold" title="假名"><font color="red">【(\S+)】</font></span>'
-    m1 = re.search(re1_str, content_str)
-    c1 = re.compile(re1_str, re.MULTILINE)
-    res1 = c1.search(content_str)
-    m2 = re.search(re2_str, content_str)
-    print(type(m1))
-    print(type(res1))
-    print(c1.flags)
-    print(re.findall(re1_str, content_str))
-    print(res1.groups())
-    print(m1.group(0))
-    print(m1.start(1))
-    print(m1.groups())
-    #    print(m2.group(1))
-    '''
-    [/u2E80-/u9FFF]+
-    '''
+    return None
