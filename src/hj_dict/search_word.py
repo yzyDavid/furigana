@@ -7,7 +7,10 @@
 import requests
 import re
 
-DEBUG = True
+'''
+This method should be redesigned
+every re just should be compile once and can be used many times for performance.
+'''
 
 BASIC_URL = r'http://dict.hjenglish.com/jp/jc/'
 str_1_start = r"<span id='kana_1' class='trs_jp bold' title='假名'>【"
@@ -23,6 +26,8 @@ def search_word(word: str):
     return None if no result can be found
     :type word: str
     """
+    DEBUG = True
+
     search_url = BASIC_URL + word
     content_str = requests.get(search_url).content.decode('utf-8')
 
