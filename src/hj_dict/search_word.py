@@ -26,7 +26,7 @@ def search_word(word: str):
     return None if no result can be found
     :type word: str
     """
-    DEBUG = True
+    DEBUG = False
 
     search_url = BASIC_URL + word
     content_str = requests.get(search_url).content.decode('utf-8')
