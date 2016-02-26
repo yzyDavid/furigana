@@ -12,9 +12,12 @@ def search_file(filename: str):
     :return:
     """
     with open(filename, 'r', encoding='utf-8') as fp:
+        counter = 0
         if not fp:
             return None
         for line in fp:
+            counter += 1
+            print(counter)
             if line.endswith('\n'):
                 line = line[0:-1]
             length = len(line)
