@@ -14,6 +14,5 @@ def proc_file(file_origin, file_target):
 
 def proc_line(line_in: str):
     for e in rep_dict:
-        print(line_in.find(e))
         line_in = line_in.replace(e, rep_dict[e])
     return line_in

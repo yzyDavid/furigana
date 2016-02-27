@@ -22,6 +22,7 @@ def main():
         search_file(sys.argv[1])
         load_dict(1)
         proc_file(sys.argv[1], sys.argv[1] + r'.output.txt')
+        print('finished!')
         return 0
     else:
         pass

@@ -15,10 +15,7 @@ def load(filename):
             origin = str(line)
         elif flag == 2:
             kana = str(line)
-            len_of_char = len(origin)
             pos = match.find(origin)
-            print(pos)
-            print(len_of_char)
             if pos == -1:
                 break
             sub = origin + '(' + kana + ')'
@@ -49,7 +46,12 @@ def save(filename):
 
 
 def load_processed(filename):
-    fp = open(filename, 'r', encoding='utf-8')
+    try:
+        fp = open(filename, 'r', encoding='utf-8')
+    except FileNotFoundError:
+        fp = open(filename, 'w', encoding='utf-8')
+        fp.close()
+        fp = open(filename, 'r', encoding='utf-8')
     flag = 0
     for line in fp:
         if line.endswith('\n'):

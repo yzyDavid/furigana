@@ -26,4 +26,12 @@ def search_file(filename: str):
                 for j in range(i, length):
                     result = search_word(line[i:j])
                     if result and line[i:j] not in rep_dict:
-                        rep_dict[line[i:j]] = line[i:j] + '(' + result + ')'
+                        origin = line[i:j]
+                        i = 1
+                        while origin[-i] == result[-i]:
+                            i += 1
+                        i -= 1
+                        if not i == 0:
+                            rep_dict[origin] = origin[:-i] + '(' + result[:-i] + ')' + origin[len(origin) - i:]
+                        else:
+                            rep_dict[origin] = origin + '(' + result + ')'
