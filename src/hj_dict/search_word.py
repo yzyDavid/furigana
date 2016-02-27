@@ -34,11 +34,7 @@ def search_word(word: str):
     str_1_re = str_1_start + str_re_bracket + str_1_end
     re_1 = re.compile(str_1_re)
     result_1 = re_1.search(content_str)
-    start_pos_1 = content_str.find(str_1_start)
-    end_pos_1 = content_str.find(str_1_end)
-    if DEBUG:
-        print(start_pos_1, end_pos_1)
-        print(result_1.groups())
+
     if result_1:
         return result_1.group(1)
 
