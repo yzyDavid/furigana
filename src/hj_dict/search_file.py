@@ -27,11 +27,11 @@ def search_file(filename: str):
                     if line[i:j] not in rep_dict:
                         result = search_word(line[i:j])
                         origin = line[i:j]
-                        i = 1
-                        while origin[-i] == result[-i]:
-                            i += 1
-                        i -= 1
-                        if not i == 0:
-                            rep_dict[origin] = origin[:-i] + '(' + result[:-i] + ')' + origin[len(origin) - i:]
+                        left = 1
+                        while origin[-left] == result[-left]:
+                            left += 1
+                        left -= 1
+                        if not left == 0:
+                            rep_dict[origin] = origin[:-left] + '(' + result[:-left] + ')' + origin[len(origin) - left:]
                         else:
                             rep_dict[origin] = origin + '(' + result + ')'
