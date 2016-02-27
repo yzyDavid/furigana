@@ -23,9 +23,9 @@ def search_file(filename: str):
                 line = line[0:-1]
             length = len(line)
             for i in range(0, length):
-                for j in range(i, length):
-                    result = search_word(line[i:j])
-                    if result and line[i:j] not in rep_dict:
+                for j in range(i + 1, length + 1):
+                    if line[i:j] not in rep_dict:
+                        result = search_word(line[i:j])
                         origin = line[i:j]
                         i = 1
                         while origin[-i] == result[-i]:
