@@ -26,6 +26,8 @@ def search_file(filename: str):
                 for j in range(i + 1, length + 1):
                     if line[i:j] not in rep_dict:
                         result = search_word(line[i:j])
+                        if result is None:
+                            continue
                         origin = line[i:j]
                         left = 1
                         while origin[-left] == result[-left]:
