@@ -1,8 +1,13 @@
+import threading
 from src.hj_dict.search_word import search_word
 from src.core.dict import *
 
 str_re_kanji = r'[\u3400-\u9FFF\uF900-\uFAFF]+'
 str_re_kana = r'[\u3040-\u30ff]'
+
+
+def try_string(string: str):
+    pass
 
 
 def search_file(filename: str):
@@ -25,6 +30,7 @@ def search_file(filename: str):
             for i in range(0, length):
                 for j in range(i + 1, length + 1):
                     if line[i:j] not in rep_dict:
+                        print(line[i:j])
                         result = search_word(line[i:j])
                         if result is None:
                             continue
