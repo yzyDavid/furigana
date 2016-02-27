@@ -1,10 +1,7 @@
 import re
 
 
-re1_str = '假名">【([/u2E80-/u9FFF]*)】<'
-fp = open('../res/html_part.txt')
-stotal = fp.readline()
-for line in fp:
-    s = fp.readline()
-    stotal += s
-print(stotal)
+def main():
+    str_re_kana = r'[\u3040-\u30FF]'
+    com = re.compile(str_re_kana)
+    print(com.search('辞めてクルマ'))

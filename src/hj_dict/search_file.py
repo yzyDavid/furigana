@@ -2,6 +2,7 @@ from src.hj_dict.search_word import search_word
 from src.core.dict import *
 
 str_re_kanji = r'[\u3400-\u9FFF\uF900-\uFAFF]+'
+str_re_kana = r'[\u3040-\u30ff]'
 
 
 def search_file(filename: str):
@@ -24,5 +25,5 @@ def search_file(filename: str):
             for i in range(0, length):
                 for j in range(i, length):
                     result = search_word(line[i:j])
-                    if result:
+                    if result and line[i:j] not in rep_dict:
                         rep_dict[line[i:j]] = line[i:j] + '(' + result + ')'

@@ -6,6 +6,7 @@
 
 import requests
 import re
+from src import DEBUG
 
 '''
 This method should be redesigned
@@ -26,7 +27,6 @@ def search_word(word: str):
     return None if no result can be found
     :type word: str
     """
-    DEBUG = False
 
     search_url = BASIC_URL + word
     content_str = requests.get(search_url).content.decode('utf-8')

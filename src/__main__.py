@@ -1,13 +1,15 @@
 from src.core.process import *
-from src.core.dict import *
+#from src.core.dict import *
 from src.hj_dict.search_file import *
 import sys
+from src import DEBUG
 
 
 def main():
     argc = len(sys.argv)
-    for arg in sys.argv:
-        print(arg)
+    if DEBUG:
+        for arg in sys.argv:
+            print(arg)
 
     if argc == 1:
         while True:
