@@ -10,3 +10,5 @@ Data comes from www.hjenglish.com.
 ###catch network IO error
 
 ###sort the dictionary by the length of key
+
+###parsing command line arguments
