@@ -5,10 +5,14 @@ Data comes from www.hjenglish.com.
 
 ##TODO List
 
-###disable single kana search
-
 ###catch network IO error
 
 ###sort the dictionary by the length of key
 
 ###parsing command line arguments
+
+##bug to fix
+
+###disable single kana search
+
+###ignore space
