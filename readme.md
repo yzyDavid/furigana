@@ -16,3 +16,5 @@ Data comes from www.hjenglish.com.
 ###disable single kana search
 
 ###ignore space
+
+##figure out the package and import system

@@ -6,7 +6,6 @@
 
 import requests
 import re
-from src import DEBUG
 
 '''
 This method should be redesigned

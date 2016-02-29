@@ -1,8 +1,5 @@
-from src.core.process import *
-#from src.core.dict import *
-from src.hj_dict.search_file import *
+#from src import DEBUG
 import sys
-from src import DEBUG
 
 
 def main():

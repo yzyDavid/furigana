@@ -1,4 +1,4 @@
-from src.core.dict import *
+from .core.dict import *
 
 
 load_dict(1)

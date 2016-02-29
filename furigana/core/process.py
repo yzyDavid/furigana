@@ -1,4 +1,4 @@
-from src.core.dict import *
+from .dict import *
 
 
 def proc_file(file_origin, file_target):
