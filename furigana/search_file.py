@@ -50,7 +50,8 @@ def search_file(filename: str):
             for i in range(0, length):
                 for j in range(i + 1, length + 1):
                     if line[i:j] not in rep_dict:
-                        list_to_process.append(line[i:j])
+                        for word in line[i:j].split(' '):
+                            list_to_process.append(word)
             pool.map(try_string, list_to_process)
             pool.close()
             pool.join()
