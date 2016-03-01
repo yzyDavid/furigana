@@ -1,4 +1,7 @@
-#from src import DEBUG
+from process import proc_file
+from dict import load_dict
+from search_file import search_file
+from globals import DEBUG
 import sys
 
 

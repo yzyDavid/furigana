@@ -1,5 +1,4 @@
-rep_list = []
-rep_dict = {}
+from globals import rep_dict
 
 
 def load(filename):
@@ -8,7 +7,6 @@ def load(filename):
     for line in fp:
         if line.endswith('\n'):
             line = line[0:-1]
-        rep_list.append(line)
         if flag == 0:
             match = str(line)
         elif flag == 1:

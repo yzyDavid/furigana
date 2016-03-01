@@ -1,7 +1,7 @@
 from multiprocessing.dummy import Pool
-from .search_word import search_word
-from ..core.dict import *
-from .. import DEBUG
+from search_word import search_word
+from dict import *
+from globals import DEBUG
 
 str_re_kanji = r'[\u3400-\u9FFF\uF900-\uFAFF]+'
 str_re_kana = r'[\u3040-\u30ff]'
