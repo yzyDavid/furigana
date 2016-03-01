@@ -8,8 +8,6 @@ str_re_kana = r'[\u3040-\u30ff]'
 
 
 def try_string(str_to_search: str):
-    if DEBUG:
-        print(str_to_search)
     result = search_word(str_to_search)
     if result is None:
         return
@@ -41,7 +39,8 @@ def search_file(filename: str):
             return None
         for line in fp:
             counter += 1
-            print(counter)
+            if DEBUG:
+                print(counter)
             if line.endswith('\n'):
                 line = line[0:-1]
             length = len(line)
@@ -51,6 +50,8 @@ def search_file(filename: str):
                 for j in range(i + 1, length + 1):
                     if line[i:j] not in rep_dict:
                         for word in line[i:j].split():
+                            if DEBUG:
+                                print(word)
                             list_to_process.append(word)
             pool.map(try_string, list_to_process)
             pool.close()
