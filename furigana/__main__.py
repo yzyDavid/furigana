@@ -2,10 +2,19 @@ from process import proc_file
 from dict import load_dict
 from search_file import search_file
 from globals import DEBUG
+from optparse import OptionParser
 import sys
 
 
 def main():
+    parser = OptionParser()
+    parser.add_option('-s', '--search')
+    parser.add_option('-q', '--quiet')
+    parser.add_option('-d', '--debug')
+    (option, args) = parser.parse_args()
+
+
+def main_old():
     argc = len(sys.argv)
     if DEBUG:
         for arg in sys.argv:
@@ -30,4 +39,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main_old()
