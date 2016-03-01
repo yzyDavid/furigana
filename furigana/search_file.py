@@ -1,4 +1,5 @@
 from multiprocessing.dummy import Pool
+import re
 from search_word import search_word
 from dict import *
 from globals import DEBUG
@@ -38,6 +39,7 @@ def search_file(filename: str):
         counter = 0
         if not fp:
             return None
+        spliter = re.compile(' |,|.|。|、|，')
         for line in fp:
             counter += 1
             if DEBUG:
@@ -45,17 +47,15 @@ def search_file(filename: str):
             if line.endswith('\n'):
                 line = line[0:-1]
             length = len(line)
-            pool = Pool(20)
+            pool = Pool(50)
             list_to_process = []
             for i in range(0, length):
                 for j in range(i + 1, length + 1):
-                    #for word in line[i:j].split():
-                    for tmp in range(1):
-                        word = line[i:j]
+                    for word in spliter.split(line[i:j]):
                         if word not in rep_dict and word not in searched_set:
                             if DEBUG:
                                 print(word)
-                                searched_set.append(word)
+                            searched_set.append(word)
                             list_to_process.append(word)
             pool.map(try_string, list_to_process)
             pool.close()
