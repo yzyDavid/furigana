@@ -50,7 +50,7 @@ def search_file(filename: str):
             for i in range(0, length):
                 for j in range(i + 1, length + 1):
                     #for word in line[i:j].split():
-                    for i in range(1):
+                    for tmp in range(1):
                         word = line[i:j]
                         if word not in rep_dict and word not in searched_set:
                             if DEBUG:
