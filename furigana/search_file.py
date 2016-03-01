@@ -39,7 +39,7 @@ def search_file(filename: str):
         counter = 0
         if not fp:
             return None
-        spliter = re.compile(' |,|.|。|、|，')
+        spliter = re.compile(r'\ |,|\.|。|、|，')
         for line in fp:
             counter += 1
             if DEBUG:
