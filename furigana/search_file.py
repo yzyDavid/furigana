@@ -2,6 +2,7 @@ from multiprocessing.dummy import Pool
 from search_word import search_word
 from dict import *
 from globals import DEBUG
+from globals import searched_set
 
 str_re_kanji = r'[\u3400-\u9FFF\uF900-\uFAFF]+'
 str_re_kana = r'[\u3040-\u30ff]'
@@ -48,10 +49,13 @@ def search_file(filename: str):
             list_to_process = []
             for i in range(0, length):
                 for j in range(i + 1, length + 1):
-                    if line[i:j] not in rep_dict:
-                        for word in line[i:j].split():
+                    #for word in line[i:j].split():
+                    for i in range(1):
+                        word = line[i:j]
+                        if word not in rep_dict and word not in searched_set:
                             if DEBUG:
                                 print(word)
+                                searched_set.append(word)
                             list_to_process.append(word)
             pool.map(try_string, list_to_process)
             pool.close()
