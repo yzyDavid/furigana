@@ -10,6 +10,12 @@ str_re_kana = r'[\u3040-\u30ff]'
 
 
 def try_string(str_to_search: str):
+    """
+    this function should try whether the word exists the furigana, and add it to the dictionary
+    if does.
+    :param str_to_search:
+    :return:
+    """
     result = search_word(str_to_search)
     if result is None:
         return
@@ -39,7 +45,7 @@ def search_file(filename: str):
         counter = 0
         if not fp:
             return None
-        spliter = re.compile(r'\ |,|\.|。|、|，')
+        spliter = re.compile(r' |,|\.|。|、|，')
         for line in fp:
             counter += 1
             if DEBUG:

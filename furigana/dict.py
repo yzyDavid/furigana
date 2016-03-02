@@ -2,6 +2,11 @@ from globals import rep_dict
 
 
 def load(filename):
+    """
+    this function loads a common (user defined) dict file.
+    :param filename:
+    :return:
+    """
     fp = open(filename, 'r', encoding='utf-8')
     flag = 0
     for line in fp:
@@ -25,6 +30,11 @@ def load(filename):
 
 
 def load_dict(last_num):
+    """
+    this function load the processed dictionary.
+    :param last_num:
+    :return:
+    """
     load_processed(r'./res/dict_processed.txt')
     for i in range(0, last_num):
         name = './res/dict' + '%03d' % i + '.txt'
