@@ -31,7 +31,7 @@ def load(filename):
 
 def load_dict(last_num):
     """
-    this function load the processed dictionary.
+    this function masters the load of all dict, including the processed dict.
     :param last_num:
     :return:
     """
@@ -43,6 +43,11 @@ def load_dict(last_num):
 
 
 def save(filename):
+    """
+    this function SHOULD save the dict to the processed dict file.
+    :param filename:
+    :return:
+    """
     fp = open(filename, 'w', encoding='utf-8')
     for index in rep_dict:
         fp.write(index)
@@ -54,6 +59,11 @@ def save(filename):
 
 
 def load_processed(filename):
+    """
+    this function load the processed dictionary.
+    :param filename:
+    :return:
+    """
     try:
         fp = open(filename, 'r', encoding='utf-8')
     except FileNotFoundError:
