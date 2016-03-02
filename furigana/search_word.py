@@ -7,6 +7,8 @@
 import requests
 import re
 
+from globals import DEBUG
+
 '''
 This method should be redesigned
 every re just should be compile once and can be used many times for performance.
@@ -35,6 +37,8 @@ def search_word(word: str):
     result_1 = re_1.search(content_str)
 
     if result_1:
+        if DEBUG:
+            print(result_1.group(1))
         return result_1.group(1)
 
     str_2_re = str_2_start + str_re_bracket + str_2_end

@@ -60,7 +60,8 @@ def search_file(filename: str):
                     for word in spliter.split(line[i:j]):
                         if word not in rep_dict and word not in searched_set:
                             if DEBUG:
-                                print(spliter.split(word))
+                                pass
+#                                print(spliter.split(word))
                             searched_set.append(word)
                             list_to_process.append(word)
             pool.map(try_string, list_to_process)
