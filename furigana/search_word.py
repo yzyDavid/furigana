@@ -31,6 +31,8 @@ def search_word(word):
 
     search_url = BASIC_URL + word
     content_str = requests.get(search_url).content.decode('utf-8')
+    if DEBUG:
+        print(content_str)
 
     str_1_re = str_1_start + str_re_bracket + str_1_end
     re_1 = re.compile(str_1_re)

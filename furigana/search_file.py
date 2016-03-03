@@ -54,7 +54,7 @@ def search_file(filename):
                 line = line[0:-1]
             length = len(line)
             pool = Pool(50)
-            list_to_process = []
+            list_to_proceed = []
             for i in range(0, length):
                 for j in range(i + 1, length + 1):
                     for word in spliter.split(line[i:j]):
@@ -63,7 +63,7 @@ def search_file(filename):
                                 pass
 #                                print(spliter.split(word))
                             searched_set.append(word)
-                            list_to_process.append(word)
-            pool.map(try_string, list_to_process)
+                            list_to_proceed.append(word)
+            pool.map(try_string, list_to_proceed)
             pool.close()
             pool.join()
