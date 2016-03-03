@@ -12,7 +12,7 @@ def proc_file(file_origin, file_target):
     fp_target.close()
 
 
-def proc_line(line_in: str):
+def proc_line(line_in):
     for e in rep_dict:
         line_in = line_in.replace(e, rep_dict[e])
     return line_in

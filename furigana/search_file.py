@@ -9,7 +9,7 @@ str_re_kanji = r'[\u3400-\u9FFF\uF900-\uFAFF]+'
 str_re_kana = r'[\u3040-\u30ff]'
 
 
-def try_string(str_to_search: str):
+def try_string(str_to_search):
     """
     this function should try whether the word exists the furigana, and add it to the dictionary
     if does.
@@ -34,7 +34,7 @@ def try_string(str_to_search: str):
         rep_dict[origin] = origin + '(' + result + ')'
 
 
-def search_file(filename: str):
+def search_file(filename):
     """
     this function search through all kanji in the filename given
     and should add all the matches into the dict.

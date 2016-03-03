@@ -22,7 +22,7 @@ str_2_end = r'】</font></span>'
 str_re_bracket = r'(\S+)'
 
 
-def search_word(word: str):
+def search_word(word):
     """
     this function should search only one word given and return it's furigana.
     return None if no result can be found
