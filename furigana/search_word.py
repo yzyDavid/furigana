@@ -30,7 +30,11 @@ def search_word(word):
     """
 
     search_url = BASIC_URL + word
-    content_str = requests.get(search_url).content.decode('utf-8')
+    try:
+        content_str = requests.get(search_url).content.decode('utf-8')
+    except requests.exceptions.ConnectionError:
+        print('Error! Connection failed!\nOn searching %s' % word)
+        return
     if DEBUG:
         print(content_str)
 

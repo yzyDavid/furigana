@@ -14,5 +14,7 @@ def proc_file(file_origin, file_target):
 
 def proc_line(line_in):
     for e in rep_dict:
+        if line_in.find(e + '('):
+            continue
         line_in = line_in.replace(e, rep_dict[e])
     return line_in

@@ -6,6 +6,7 @@ Data comes from www.hjenglish.com.
 ##TODO List
 
 ###catch network IO error
+implemented, only print an error message.
 
 ###sort the dictionary by the length of key
 might be unable, for dictionary is not a structure with sort. 
@@ -15,6 +16,9 @@ might be unable, for dictionary is not a structure with sort.
 ##bug to fix
 
 ###disable single kana search
+
+###detect the followed bracket
+to be tested.
 
 ###ignore space
 finished part, to be checked.
