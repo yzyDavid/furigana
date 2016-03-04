@@ -35,8 +35,6 @@ def search_word(word):
     except requests.exceptions.ConnectionError:
         print('Error! Connection failed!\nOn searching %s' % word)
         return
-    if DEBUG:
-        print(content_str)
 
     str_1_re = str_1_start + str_re_bracket + str_1_end
     re_1 = re.compile(str_1_re)

@@ -49,7 +49,7 @@ def search_file(filename):
         for line in fp:
             counter += 1
             if DEBUG:
-                print(counter)
+                print('line searching: %d' % counter)
             if line.endswith('\n'):
                 line = line[0:-1]
             length = len(line)
