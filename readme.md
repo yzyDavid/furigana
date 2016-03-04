@@ -10,7 +10,7 @@ Data comes from dict.hjenglish.com.
 implemented, only print an error message.
 
 ###sort the dictionary by the length of key
-might be unable, for dictionary is not a structure with sort. 
+fixed. a dictionary can be traversed by length of key.
 
 ###parsing command line arguments
 

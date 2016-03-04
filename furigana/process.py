@@ -13,7 +13,7 @@ def proc_file(file_origin, file_target):
 
 
 def proc_line(line_in):
-    for e in rep_dict:
+    for e in sorted(rep_dict, key=lambda word: len(word), reverse=True):
         if line_in.find(e + '(') != -1:
             continue
         line_in = line_in.replace(e, rep_dict[e])
