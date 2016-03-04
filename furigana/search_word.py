@@ -9,6 +9,8 @@ import re
 
 from globals import DEBUG
 from globals import kanas
+from globals import letters
+from globals import splitch
 
 '''
 This method should be redesigned
@@ -30,15 +32,20 @@ def search_word(word):
     :type word: str
     """
 
-    if word in kanas:
-        return
+    for char in word:
+        if char not in kanas and char not in letters and char not in splitch:
+            break
+    else:
+        if DEBUG:
+            print('%s===================================================' % word)
+        return None
 
     search_url = BASIC_URL + word
     try:
         content_str = requests.get(search_url).content.decode('utf-8')
     except requests.exceptions.ConnectionError:
         print('Error! Connection failed!\nOn searching %s' % word)
-        return
+        return None
 
     str_1_re = str_1_start + str_re_bracket + str_1_end
     re_1 = re.compile(str_1_re)
