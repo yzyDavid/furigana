@@ -1,4 +1,5 @@
 from globals import rep_dict
+from globals import sorted_list
 
 
 def load(filename):
@@ -85,3 +86,10 @@ def load_processed(filename):
         flag %= 3
     fp.close()
 
+
+def sort_dict():
+    """
+    this function should generate a list of the sorted dict from rep_dict to sorted_list.
+    :return: nothing
+    """
+    pass

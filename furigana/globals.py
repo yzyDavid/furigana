@@ -1,6 +1,7 @@
 DEBUG = True
 rep_dict = {}
 searched_set = ([])
+sorted_list = []
 
 kanas = [
     "ん", "ン",
