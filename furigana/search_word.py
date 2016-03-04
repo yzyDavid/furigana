@@ -8,6 +8,7 @@ import requests
 import re
 
 from globals import DEBUG
+from globals import kanas
 
 '''
 This method should be redesigned
@@ -28,6 +29,9 @@ def search_word(word):
     return None if no result can be found
     :type word: str
     """
+
+    if word in kanas:
+        return
 
     search_url = BASIC_URL + word
     try:

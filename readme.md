@@ -16,6 +16,7 @@ might be unable, for dictionary is not a structure with sort.
 ##bug to fix
 
 ###disable single kana search
+fixed.
 
 ###detect the followed bracket
 to be tested.
