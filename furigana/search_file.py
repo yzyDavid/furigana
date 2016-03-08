@@ -33,6 +33,8 @@ def try_string(str_to_search):
     else:
         rep_dict[origin] = origin + '(' + result + ')'
 
+    gen_inflected(str_to_search)
+
 
 def search_file(filename):
     """
@@ -53,7 +55,7 @@ def search_file(filename):
             if line.endswith('\n'):
                 line = line[0:-1]
             length = len(line)
-            pool = Pool(50)
+            pool = Pool(500)
             list_to_proceed = []
             for i in range(0, length):
                 for j in range(i + 1, length + 1):

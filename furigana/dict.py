@@ -85,3 +85,51 @@ def load_processed(filename):
         flag %= 3
     fp.close()
 
+
+def gen_inflected(word):
+    """
+    this function should:
+        1.determine the type of the word
+        2.generate the inflected form od the word and add it to the dict.
+        !:this function should ONLY be called when the word got a result in the dict
+          and it has been already added into the rep_dict.
+          otherwise a exception would be raised.
+    :param word:
+    :return:
+    """
+    verb_suffix_1 = [
+        'う', 'く', 'ぐ', 'す', 'ず',
+        'つ', 'づ', 'ぬ', 'ふ', 'ぶ',
+        'ぷ', 'む', 'ゆ', 'る'
+    ]
+
+    verb_suffix_2 = ['いる', 'きる', 'しる', 'ちる', 'にる',
+                     'ひる', 'みる', 'りる',
+                     'ぎる', 'じる', 'ぢる', 'びる', 'ぴる',
+                     'える', 'ける', 'せる', 'てる', 'ねる',
+                     'へる', 'める', 'れる',
+                     'げる', 'ぜる', 'でる', 'べる', 'ぺる'
+                     ]
+
+    verb_suffix_modified = ['たい', 'ない']
+
+    adj_suffix = ['い']
+
+    adj_suffix_modified = ['く']
+
+    adjverb_suffix = ['']  # actually I got no idea on it. Besides I don't know if it's useful.
+
+    for suffix in verb_suffix_2:
+        if word[-len(suffix):] == suffix:
+            pre_fix = word[:-2]
+            pre_fix_processed = rep_dict[word][:-2]
+
+    for suffix in verb_suffix_1:
+        if word[-len(suffix):] == suffix:
+            pass
+
+    for suffix in adj_suffix:
+        if word[-len(suffix):] == suffix:
+            pre_fix = word[:-1]
+            pre_fix_processed = rep_dict[word][:-1]
+            rep_dict[pre_fix + adj_suffix_modified[0]] = pre_fix_processed + adj_suffix_modified[0]
