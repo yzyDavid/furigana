@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 DEBUG = True
 rep_dict = {}
 searched_set = ([])

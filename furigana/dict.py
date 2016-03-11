@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 from globals import rep_dict
 
 
@@ -103,6 +105,12 @@ def gen_inflected(word):
         'ぷ', 'む', 'ゆ', 'る'
     ]
 
+    verb_suffix_i_1 = [
+        'い', 'き', 'ぎ', 'し', 'じ',
+        'ち', 'ぢ', 'に', 'ひ', 'び',
+        'ぴ', 'み', '', 'り'
+    ]
+
     verb_suffix_2 = ['いる', 'きる', 'しる', 'ちる', 'にる',
                      'ひる', 'みる', 'りる',
                      'ぎる', 'じる', 'ぢる', 'びる', 'ぴる',
@@ -111,7 +119,8 @@ def gen_inflected(word):
                      'げる', 'ぜる', 'でる', 'べる', 'ぺる'
                      ]
 
-    verb_suffix_modified = ['たい', 'ない']
+    verb_suffix_modified = ['ない']
+    append_to_pre_masu = ['ます', 'たい']
 
     adj_suffix = ['い']
 
@@ -121,15 +130,21 @@ def gen_inflected(word):
 
     for suffix in verb_suffix_2:
         if word[-len(suffix):] == suffix:
-            pre_fix = word[:-2]
-            pre_fix_processed = rep_dict[word][:-2]
+            pre_masu_fix = word[:-1]
+            pre_masu_fix_processed = rep_dict[word][:-1]
+            rep_dict[pre_masu_fix] = pre_masu_fix_processed
+            return
 
     for suffix in verb_suffix_1:
         if word[-len(suffix):] == suffix:
-            pass
+            pre_masu_fix = word[:-1] + verb_suffix_i_1[verb_suffix_1.index(suffix)]
+            pre_masu_fix_processed = rep_dict[word][:-1] + verb_suffix_i_1[verb_suffix_1.index(suffix)]
+            rep_dict[pre_masu_fix] = pre_masu_fix_processed
+        return
 
     for suffix in adj_suffix:
         if word[-len(suffix):] == suffix:
             pre_fix = word[:-1]
             pre_fix_processed = rep_dict[word][:-1]
             rep_dict[pre_fix + adj_suffix_modified[0]] = pre_fix_processed + adj_suffix_modified[0]
+            return

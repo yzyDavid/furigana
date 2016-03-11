@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 from process import proc_file
 from dict import load_dict
 from search_file import search_file

@@ -14,6 +14,10 @@ fixed. a dictionary can be traversed by length of key.
 
 ###parsing command line arguments
 
+###Optimising performance:
+Every regex should only be compiled once.
+
+###judge if the server return "dangerous"
 
 ##bug to fix
 

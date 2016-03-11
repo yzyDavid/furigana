@@ -32,12 +32,14 @@ def search_word(word):
     :type word: str
     """
 
+    word = word.strip()
+    if word.startswith(' '):
+        return None
+
     for char in word:
         if char not in kanas and char not in letters and char not in splitch:
             break
     else:
-        if DEBUG:
-            print('%s===================================================' % word)
         return None
 
     search_url = BASIC_URL + word
@@ -52,13 +54,12 @@ def search_word(word):
     result_1 = re_1.search(content_str)
 
     if result_1:
-        if DEBUG:
-            print(result_1.group(1))
         return result_1.group(1)
 
     str_2_re = str_2_start + str_re_bracket + str_2_end
     re_2 = re.compile(str_2_re)
     result_2 = re_2.search(content_str)
+
     if result_2:
         return result_2.group(1)
 

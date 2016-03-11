@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 from multiprocessing.dummy import Pool
 import re
 from search_word import search_word
