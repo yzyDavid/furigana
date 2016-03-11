@@ -120,10 +120,9 @@ def gen_inflected(word):
                      ]
 
     verb_suffix_modified = ['ない']
-    append_to_pre_masu = ['ます', 'たい']
+    append_to_pre_masu = ['ます', 'たい', 'たくない', 'なさい']
 
     adj_suffix = ['い']
-
     adj_suffix_modified = ['く']
 
     adjverb_suffix = ['']  # actually I got no idea on it. Besides I don't know if it's useful.
