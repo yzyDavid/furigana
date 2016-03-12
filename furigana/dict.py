@@ -111,6 +111,12 @@ def gen_inflected(word):
         'ぴ', 'み', '', 'り'
     ]
 
+    verb_suffix_nai_1 = [
+        'わない', 'かない', 'がない', 'さない', 'ざない',
+        'たない', 'だない', 'なない', 'はない', 'ばない',
+        'ぱない', 'まない', 'やない', 'らない'
+    ]
+
     verb_suffix_2 = ['いる', 'きる', 'しる', 'ちる', 'にる',
                      'ひる', 'みる', 'りる',
                      'ぎる', 'じる', 'ぢる', 'びる', 'ぴる',
@@ -139,6 +145,8 @@ def gen_inflected(word):
             pre_masu_fix = word[:-1] + verb_suffix_i_1[verb_suffix_1.index(suffix)]
             pre_masu_fix_processed = rep_dict[word][:-1] + verb_suffix_i_1[verb_suffix_1.index(suffix)]
             rep_dict[pre_masu_fix] = pre_masu_fix_processed
+            rep_dict[word[:-1] + verb_suffix_nai_1[verb_suffix_1.index(suffix)]] = \
+                rep_dict[word[:-1]] + verb_suffix_nai_1[verb_suffix_1.index(suffix)]
         return
 
     for suffix in adj_suffix:
