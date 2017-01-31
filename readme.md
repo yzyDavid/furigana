@@ -3,6 +3,10 @@
 This program enables you to add furigana to japanese text inside brackets.
 Data comes from dict.hjenglish.com.
 
+##packages to use
+beautifulsoup4
+pymysql
+
 
 ##TODO List
 
