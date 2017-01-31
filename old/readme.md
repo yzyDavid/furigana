@@ -6,8 +6,6 @@ Data comes from dict.hjenglish.com.
 
 ##TODO List
 
-###rewrite now
-
 ###catch network IO error
 implemented, only print an error message.
 
@@ -20,8 +18,6 @@ fixed. a dictionary can be traversed by length of key.
 Every regex should only be compiled once.
 
 ###judge if the server return "dangerous"
-
-# old things
 
 ##bug to fix
 
