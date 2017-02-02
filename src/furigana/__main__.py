@@ -2,6 +2,7 @@ import sys
 from optparse import OptionParser
 
 import configs
+import db
 
 
 def main():
@@ -21,6 +22,9 @@ def main():
 
     if configs.debug:
         print('furigana')
+
+    db.connect()
+    db.disconnect()
 
 
 if __name__ == '__main__':
