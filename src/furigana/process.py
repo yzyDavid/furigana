@@ -46,8 +46,8 @@ def check_kanji_exists(word: str) -> bool:
 
 def check_exists_in_db(origin_word: str) -> bool:
     """
-
-    :param word:
+    check if the word already in the database.
+    :param origin_word:
     :return:
     """
     cursor = db.conn.cursor()
@@ -63,6 +63,8 @@ def search_word(word: str) -> str:
     """
     search one kanji word and return it's furigana if exists.
     return None on error occurred.
+    also put the result in db.
+    should NOT be called outside the file.
     :param word: word to search in net
     """
     search_url = configs.BASIC_URL + word
@@ -74,4 +76,13 @@ def search_word(word: str) -> str:
         return None
     doc = bs(content_str)
     cursor = db.conn.cursor()
+    pass
+
+
+def push_word_in_queue(word: str) -> str:
+    if word:
+        word_queue.put(word)
+
+
+def process_text(text: str) -> str:
     pass

@@ -30,7 +30,11 @@ def worker(text: str = '', search_only=False, local_only=False) -> str:
     :return:
     """
     db.connect()
+
+    result = process.process_text(text)
+
     db.disconnect()
+    return result
 
 
 if __name__ == '__main__':
