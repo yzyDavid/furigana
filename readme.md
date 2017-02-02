@@ -6,6 +6,7 @@ Data comes from dict.hjenglish.com.
 ##packages to use
 beautifulsoup4
 pymysql
+aiohttp
 
 
 ##TODO List
