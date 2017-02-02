@@ -51,14 +51,27 @@ def check_exists_in_db(origin_word: str) -> bool:
     :return:
     """
     cursor = db.conn.cursor()
-    connect = db.conn
-    pass
+    # connect = db.conn
+    result = cursor.execute('''SELECT word FROM ruby_table WHERE word = '%s';''' % origin_word)
+    if not result:
+        return False
+    else:
+        return True
 
 
 def search_word(word: str) -> str:
     """
     search one kanji word and return it's furigana if exists.
+    return None on error occurred.
     :param word: word to search in net
     """
     search_url = configs.BASIC_URL + word
+    try:
+        content_str = requests.get(search_url).content.decode('utf-8')
+    except requests.exceptions.ConnectionError:
+        if configs.debug:
+            print('Error! Connection failed!\nOn searching %s' % word)
+        return None
+    doc = bs(content_str)
+    cursor = db.conn.cursor()
     pass
