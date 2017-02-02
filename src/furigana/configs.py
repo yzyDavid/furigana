@@ -3,5 +3,7 @@ table_name = 'ruby_table'
 username = 'root'
 password = ''
 
-max_in_pools = 500
+BASIC_URL = r'http://dict.hjenglish.com/jp/jc/'
+
+max_in_pools = 50
 debug = True

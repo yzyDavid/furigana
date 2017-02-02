@@ -3,6 +3,7 @@ from optparse import OptionParser
 
 import configs
 import db
+import process
 
 
 def main():
@@ -17,13 +18,17 @@ def main():
 
     # the --help is conflicting
     # parser.add_option('-h', '--help')
-   
+
     (option, args) = parser.parse_args()
 
     worker()
 
 
-def worker():
+def worker(text: str = '', search_only=False, local_only=False) -> str:
+    """
+    process a text.
+    :return:
+    """
     db.connect()
     db.disconnect()
 
