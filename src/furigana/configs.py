@@ -1,3 +1,9 @@
+__doc__ = """
+dynamic configs, can be changed according to
+actual database and machine parameters.
+"""
+
+# database config
 db_name = 'furigana'
 table_name = 'ruby_table'
 username = 'root'
