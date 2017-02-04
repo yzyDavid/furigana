@@ -44,15 +44,15 @@ def check_kanji_exists(word: str) -> bool:
     return False
 
 
-def check_exists_in_db(origin_word: str) -> bool:
+def check_exists_in_db(raw_word: str) -> bool:
     """
     check if the word already in the database.
-    :param origin_word:
+    :param raw_word:
     :return:
     """
     cursor = db.conn.cursor()
     # connect = db.conn
-    result = cursor.execute('''SELECT word FROM ruby_table WHERE word = '%s';''' % origin_word)
+    result = cursor.execute('''SELECT word FROM ruby_table WHERE word = '%s';''' % raw_word)
     if not result:
         return False
     else:
