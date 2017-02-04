@@ -69,14 +69,29 @@ def search_word(word: str) -> str:
     """
     search_url = configs.BASIC_URL + word
     try:
-        content_str = requests.get(search_url).content.decode('utf-8')
+        content_str = requests.get(search_url, headers=configs.headers).content.decode('utf-8')
     except requests.exceptions.ConnectionError:
         if configs.debug:
             print('Error! Connection failed!\nOn searching %s' % word)
         return None
-    doc = bs(content_str)
+    doc = bs(content_str, 'html.parser')
     cursor = db.conn.cursor()
-    pass
+    jpword = doc.find_all(id='jpword_1')[0].text
+    kana = doc.find_all(id='kana_1')[0].text[1:-1]
+    okurigana_len = 1
+    while jpword[-okurigana_len] == kana[-okurigana_len]:
+        okurigana_len += 1
+    okurigana_len -= 1
+    kanji = jpword[:-okurigana_len]
+    kanji_kana = kana[:-okurigana_len]
+    if configs.debug:
+        print(kanji, kanji_kana)
+    cursor.execute(
+        '''DELETE FROM ruby_table WHERE word = '%s' ''' % word
+    )
+    cursor.execute(
+        '''INSERT INTO ruby_table VALUES ('%s', '%s', '%s', '%s')''' % (word, jpword, kanji, kanji_kana))
+    db.conn.commit()
 
 
 def push_word_in_queue(word: str) -> str:

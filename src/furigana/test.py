@@ -16,6 +16,9 @@ class FuriganaTestCase(unittest.TestCase):
     def test_check_exists_in_db(self):
         self.assertFalse(process.check_exists_in_db('just_a_english_word'))
 
+    def test_search_word(self):
+        process.search_word('寝ない')
+
 
 if __name__ == '__main__':
     unittest.main()

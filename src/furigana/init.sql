@@ -4,11 +4,11 @@
 
 #MySQL
 
-CREATE DATABASE furigana;
+CREATE DATABASE IF NOT EXISTS furigana;
 
 USE furigana;
 
-CREATE TABLE ruby_table(
+CREATE TABLE IF NOT EXISTS ruby_table(
   word VARCHAR(20) NOT NULL PRIMARY KEY,
   origin_form VARCHAR(20) NOT NULL,
   kanji_part VARCHAR(10) NOT NULL,
