@@ -11,6 +11,7 @@ import db
 
 word_queue = Queue()
 threads = []
+end_signal = False
 
 
 class WorkThread(threading.Thread):
@@ -25,14 +26,21 @@ class WorkThread(threading.Thread):
     def run(self):
         if configs.debug:
             print(self.getName(), 'started')
-        if word_queue.empty():
-            return
-        while not word_queue.empty():
+        while True:
+            if word_queue.empty():
+                if end_signal:
+                    if configs.debug:
+                        print(self.getName(), 'ended')
+                    return
+                else:
+                    continue
             word = word_queue.get()
             if not is_kanji_exists(word):
                 continue
             if is_exists_in_db(word):
                 continue
+            if configs.debug:
+                print('to search:', word)
             search_word(word)
 
 
@@ -93,6 +101,10 @@ def search_word(word: str) -> str:
             print('Error! Connection failed!\nOn searching %s' % word)
         return None
     doc = bs(content_str, 'html.parser')
+    validate = doc.find_all(id='UserValidate')
+    if len(validate) == 1:
+        print('=== CAPTCHA ===')
+        return None
     jpword_list = doc.find_all(id='jpword_1')
     assert len(jpword_list) == 0 or len(jpword_list) == 1
     if len(jpword_list) == 0:
@@ -109,7 +121,7 @@ def search_word(word: str) -> str:
     kanji_kana = kana[:-okurigana_len]
     replacement = word.replace(kanji, kanji + '(' + kanji_kana + ')', 1)
     if configs.debug:
-        print(kanji, kanji_kana)
+        print('result:', kanji, kanji_kana)
     conn = db.connect()
     cursor = conn.cursor()
     cursor.execute(
@@ -135,6 +147,9 @@ def start_search():
     time keeping is needed.
     :return:
     """
+    assert len(threads) <= configs.max_in_pools
+    if len(threads) == configs.max_in_pools:
+        return
     for n in range(configs.max_in_pools):
         t = WorkThread()
         t.start()
