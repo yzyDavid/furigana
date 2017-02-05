@@ -25,7 +25,10 @@ class FuriganaTestCase(unittest.TestCase):
 
     def test_search_word_in_text(self):
         self.assertEqual(True, True)
-        process.search_word_in_text('asdfg')
+        process.search_word_in_text('just_a_english_sentence')
+        with open('raw_text_1.txt', mode='r') as file:
+            for line in file:
+                process.search_word_in_text(line)
 
 
 if __name__ == '__main__':

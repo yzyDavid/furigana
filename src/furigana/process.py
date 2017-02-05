@@ -3,6 +3,7 @@ from queue import Queue
 import requests
 import threading
 from itertools import product
+import pymysql
 
 import configs
 import res
@@ -56,9 +57,16 @@ def is_exists_in_db(raw_word: str) -> bool:
     :param raw_word:
     :return:
     """
+    if len(raw_word) == 0:
+        return False
     cursor = db.conn.cursor()
     # connect = db.conn
-    result = cursor.execute('''SELECT word FROM ruby_table WHERE word = '%s';''' % raw_word)
+    try:
+        result = cursor.execute('''SELECT word FROM ruby_table WHERE word = '%s';''' % raw_word)
+    except pymysql.err.InternalError:
+        pass
+        print('===ERROR===', raw_word)
+
     if not result:
         return False
     else:
@@ -82,7 +90,11 @@ def search_word(word: str) -> str:
         return None
     doc = bs(content_str, 'html.parser')
     cursor = db.conn.cursor()
-    jpword = doc.find_all(id='jpword_1')[0].text
+    jpword_list = doc.find_all(id='jpword_1')
+    assert len(jpword_list) == 0 or len(jpword_list) == 1
+    if len(jpword_list) == 0:
+        return None
+    jpword = jpword_list[0].text
     kana = doc.find_all(id='kana_1')[0].text[1:-1]
 
     okurigana_len = 1
@@ -118,7 +130,10 @@ def start_search():
     time keeping is needed.
     :return:
     """
-    pass
+    for n in range(configs.max_in_pools):
+        t = WorkThread()
+        t.start()
+        threads.append(t)
 
 
 def search_word_in_text(text: str):
@@ -138,7 +153,7 @@ def search_word_in_text(text: str):
             if not is_kanji_exists(word) or is_exists_in_db(word):
                 continue
             push_word_in_queue(word)
-    pass
+    start_search()
 
 
 def replace_text(text: str) -> str:
