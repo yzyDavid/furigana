@@ -5,10 +5,10 @@ import db
 
 class FuriganaTestCase(unittest.TestCase):
     def setUp(self):
-        db.connect()
+        pass
 
     def tearDown(self):
-        db.disconnect()
+        pass
 
     def test_smoking(self):
         self.assertEqual(True, True)
@@ -26,7 +26,7 @@ class FuriganaTestCase(unittest.TestCase):
     def test_search_word_in_text(self):
         self.assertEqual(True, True)
         process.search_word_in_text('just_a_english_sentence')
-        with open('raw_text_1.txt', mode='r') as file:
+        with open('test_text.txt', mode='r') as file:
             for line in file:
                 process.search_word_in_text(line)
 
