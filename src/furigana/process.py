@@ -84,13 +84,15 @@ def search_word(word: str) -> str:
     okurigana_len -= 1
     kanji = jpword[:-okurigana_len]
     kanji_kana = kana[:-okurigana_len]
+    replacement = word.replace(kanji, kanji + '(' + kanji_kana + ')', 1)
     if configs.debug:
         print(kanji, kanji_kana)
     cursor.execute(
         '''DELETE FROM ruby_table WHERE word = '%s' ''' % word
     )
     cursor.execute(
-        '''INSERT INTO ruby_table VALUES ('%s', '%s', '%s', '%s')''' % (word, jpword, kanji, kanji_kana))
+        f'''INSERT INTO ruby_table VALUES ('{word}', '{jpword}', '{kanji}', '{kanji_kana}', '{replacement}')'''
+    )
     db.conn.commit()
 
 
