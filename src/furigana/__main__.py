@@ -31,7 +31,7 @@ def worker(text: str = '', search_only=False, local_only=False) -> str:
     """
     db.connect()
 
-    result = process.process_text(text)
+    result = process.search_word_in_text(text)
 
     db.disconnect()
     return result

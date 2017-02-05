@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup as bs
 from queue import Queue
 import requests
 import threading
+from itertools import product
 
 import configs
 import res
@@ -12,6 +13,11 @@ threads = []
 
 
 class WorkThread(threading.Thread):
+    """
+    work thread for the thread pool.
+    fetch word in the queue and die if the queue is empty.
+    """
+
     def __init__(self):
         threading.Thread.__init__(self)
 
@@ -20,15 +26,15 @@ class WorkThread(threading.Thread):
             return
         while not word_queue.empty():
             word = word_queue.get()
-            if not check_kanji_exists(word):
+            if not is_kanji_exists(word):
                 continue
-            if check_exists_in_db(word):
+            if is_exists_in_db(word):
                 continue
             search_word(word)
         pass
 
 
-def check_kanji_exists(word: str) -> bool:
+def is_kanji_exists(word: str) -> bool:
     """
     check if a word has kanji.
     return True if the word need to be transformed.
@@ -44,7 +50,7 @@ def check_kanji_exists(word: str) -> bool:
     return False
 
 
-def check_exists_in_db(raw_word: str) -> bool:
+def is_exists_in_db(raw_word: str) -> bool:
     """
     check if the word already in the database.
     :param raw_word:
@@ -78,28 +84,67 @@ def search_word(word: str) -> str:
     cursor = db.conn.cursor()
     jpword = doc.find_all(id='jpword_1')[0].text
     kana = doc.find_all(id='kana_1')[0].text[1:-1]
+
     okurigana_len = 1
     while jpword[-okurigana_len] == kana[-okurigana_len]:
         okurigana_len += 1
     okurigana_len -= 1
+
     kanji = jpword[:-okurigana_len]
     kanji_kana = kana[:-okurigana_len]
     replacement = word.replace(kanji, kanji + '(' + kanji_kana + ')', 1)
     if configs.debug:
         print(kanji, kanji_kana)
     cursor.execute(
+
         '''DELETE FROM ruby_table WHERE word = '%s' ''' % word
     )
     cursor.execute(
         f'''INSERT INTO ruby_table VALUES ('{word}', '{jpword}', '{kanji}', '{kanji_kana}', '{replacement}')'''
     )
     db.conn.commit()
+    return replacement
 
 
 def push_word_in_queue(word: str) -> str:
     if word:
         word_queue.put(word)
+    return word
 
 
-def process_text(text: str) -> str:
+def start_search():
+    """
+    launch the thread pool.
+    time keeping is needed.
+    :return:
+    """
+    pass
+
+
+def search_word_in_text(text: str):
+    """
+
+    :param text:
+    """
+    for line in text.split('\n'):
+        length = len(line)
+        if configs.debug:
+            print(line)
+            print(length)
+        for (begin, end) in product(range(length), repeat=2):
+            if begin > end:
+                continue
+            word = line[begin:end + 1]
+            if not is_kanji_exists(word) or is_exists_in_db(word):
+                continue
+            push_word_in_queue(word)
+    pass
+
+
+def replace_text(text: str) -> str:
+    """
+
+    :param text:
+    :return:
+    """
     pass
