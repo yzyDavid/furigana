@@ -4,6 +4,7 @@ import requests
 import threading
 from itertools import product
 import pymysql
+import time
 
 import configs
 import res
@@ -12,6 +13,8 @@ import db
 word_queue = Queue()
 threads = []
 end_signal = False
+pause_signal = False
+pause_time = 0
 
 
 class WorkThread(threading.Thread):
@@ -24,9 +27,18 @@ class WorkThread(threading.Thread):
         threading.Thread.__init__(self)
 
     def run(self):
+        global pause_signal
         if configs.debug:
             print(self.getName(), 'started')
         while True:
+            if pause_signal:
+                if configs.debug:
+                    print(self.getName(), 'paused')
+                time.sleep(configs.sleep_time)
+                pause_signal = False
+                if configs.debug:
+                    print(self.getName(), 'resumed')
+                continue
             if word_queue.empty():
                 if end_signal:
                     if configs.debug:
@@ -93,6 +105,7 @@ def search_word(word: str) -> str:
     should NOT be called outside the file.
     :param word: word to search in net
     """
+    global pause_signal
     search_url = configs.BASIC_URL + word
     try:
         content_str = requests.get(search_url, headers=configs.headers).content.decode('utf-8')
@@ -104,6 +117,8 @@ def search_word(word: str) -> str:
     validate = doc.find_all(id='UserValidate')
     if len(validate) == 1:
         print('=== CAPTCHA ===')
+        pause_signal = True
+        word_queue.put(word)
         return None
     jpword_list = doc.find_all(id='jpword_1')
     assert len(jpword_list) == 0 or len(jpword_list) == 1
@@ -117,11 +132,25 @@ def search_word(word: str) -> str:
         okurigana_len += 1
     okurigana_len -= 1
 
-    kanji = jpword[:-okurigana_len]
-    kanji_kana = kana[:-okurigana_len]
-    replacement = word.replace(kanji, kanji + '(' + kanji_kana + ')', 1)
+    simplified_kanji_len = 1
+    while simplified_kanji_len < len(word) and is_kanji_exists(word[simplified_kanji_len]):
+        simplified_kanji_len += 1
+
+    simplified_kanji = word[:simplified_kanji_len]
+
+    if okurigana_len == 0:
+        kanji = jpword
+        kanji_kana = kana
+        replacement = word.replace(word, kanji + '(' + kanji_kana + ')')
+    else:
+        kanji = jpword[:-okurigana_len]
+        kanji_kana = kana[:-okurigana_len]
+        # replacement = word.replace(kanji, kanji + '(' + kanji_kana + ')')
+        replacement = word.replace(simplified_kanji, kanji + '(' + kanji_kana + ')')
     if configs.debug:
-        print('result:', kanji, kanji_kana)
+        print('kanji:', kanji)
+        print('kanji_kana:', kanji_kana)
+        print('result:', word, replacement)
     conn = db.connect()
     cursor = conn.cursor()
     cursor.execute(
@@ -168,6 +197,8 @@ def search_word_in_text(text: str):
             print(length)
         for (begin, end) in product(range(length), repeat=2):
             if begin > end:
+                continue
+            if end - begin > 10:
                 continue
             word = line[begin:end + 1]
             if not is_kanji_exists(word) or is_exists_in_db(word):

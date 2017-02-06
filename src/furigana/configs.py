@@ -12,5 +12,6 @@ password = ''
 BASIC_URL = r'http://dict.hjenglish.com/jp/jc/'
 headers = {"User-Agent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
 
-max_in_pools = 5
+max_in_pools = 10
 debug = True
+sleep_time = 30
