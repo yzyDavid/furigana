@@ -1,51 +1,35 @@
 # Project Furigana
 
-This program enables you to add furigana to japanese text inside brackets.
-Data comes from dict.hjenglish.com.
+This program could add Furigana(a kind of Japanese reading aid) to Japanese characters in brackets after the word. It uses data from dict.hjenglish.com.
 
-##packages to use
-beautifulsoup4
-pymysql
-aiohttp
+### Requirements
 
+To run this repository, these packages have to be available in python environment:
 
-##TODO List
+ - beautifulsoup4
+ - pymysql
+ - aiohttp
 
-###rewrite now
+### TODO List
 
-###catch network IO error
-implemented, only print an error message.
+ - [ ] Refactor code
+ - [ ] Parsing command line arguments
+ - [ ] Optimze RegEx: every regex should only be compiled once.
+ - [ ] Degermine whether the server returns `dangerous`
+ - [ ] Deal with prefix spaces.
+ - [ ] Merge the kanjic2j with the project
+ - [ ] Figure out the package and import system
 
-###sort the dictionary by the length of key
-fixed. a dictionary can be traversed by length of key.
+### Done list:
+ - catch network IO error.
+Implemented, only print an error message.
 
-###parsing command line arguments
+ - sort the dictionary by the length of key
+Fixed. a dictionary can be traversed by length of key.
 
-###Optimising performance:
-Every regex should only be compiled once.
+### bugs to fix
 
-###judge if the server return "dangerous"
-
-# old things
-
-##bug to fix
-
-###disable single kana search
-fixed.
-
-###detect the followed bracket
-fixed.
-
-###ignore space
-finished part, to be checked.
-other splitch should be processed.
-
-###deal with the form change
-
-###prefix spaces
-
-
-##figure out the package and import system
-
-
-##Merge the kanjic2j with the project
+ - [x] disable single kana search
+ - [x] detect the followed bracket
+ - [ ] ignore space - further check needed
+ - [ ] deal with form chagne
